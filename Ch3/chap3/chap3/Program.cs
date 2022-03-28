@@ -10,6 +10,8 @@ namespace chap3
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("Test");
+            Console.ReadLine();
         }
     }
 }
