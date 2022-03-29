@@ -8,7 +8,7 @@ namespace Chap4
 {
     class Employee
     {
-        int a;
+        protected int a;
         public Employee()
         {
             a = 5;

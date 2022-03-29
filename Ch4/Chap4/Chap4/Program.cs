@@ -11,6 +11,21 @@ namespace Chap4
         static void Main(string[] args)
         {
             object obj = new object();
+			// Приведение
+			bool b1 = obj is object;   // true
+			bool b2 = obj is Employee;//False
+
+
+			// IS and AS
+			if (obj is Employee)
+            {
+				Employee e = (Employee)obj;//too long
+            }
+
+			Employee ee = obj as Employee;// null or New employee
+
+
+
 
 			Console.WriteLine(obj.ToString());
 			Console.WriteLine("Test!");
