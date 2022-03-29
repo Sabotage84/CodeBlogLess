@@ -25,12 +25,24 @@ namespace Chap4
 			Employee ee = obj as Employee;// null or New employee
 
 
+			// Bad meth
+			Manager m = new Manager();
+			PromoteEmployee(m);// all good
+
+			PromoteEmployee(obj);//Runtime error!!!!!!!!
+
 
 
 			Console.WriteLine(obj.ToString());
 			Console.WriteLine("Test!");
 			Console.ReadLine();
         }
+
+		static void PromoteEmployee(object o)
+        {
+			Employee e1 = (Employee)o; //possible runtime error
+        }
+
 		/*
 		public override bool Equals(object obj)
 		{
