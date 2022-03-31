@@ -31,7 +31,7 @@ namespace Chap4
 
 			PromoteEmployee(obj);//Runtime error!!!!!!!!
 
-
+			M3();
 
 			Console.WriteLine(obj.ToString());
 			Console.WriteLine("Test!");
@@ -40,19 +40,31 @@ namespace Chap4
 
 		static void PromoteEmployee(object o)
         {
-			Employee e1 = (Employee)o; //possible runtime error
+			//Employee e1 = (Employee)o; //possible runtime error
         }
 
 		void M1()
         {
-			string name = "Joe";
-			M2(name);
+			string name = "Joe"; //name в стек 
+			M2(name);// в стек точка возврата, вызов м2
         }
 
-		void M2(string n)
+		void M2(string n)//переменная n ссылается на тоже что и name
         {
+			int length = n.Length;//стек заполняется переменными 
+			int tally;//из вызванного метода м2
+        }//выход и возвращение стека на точку возврата в м1
 
+		static void M3()
+        {
+			Employee e;
+			int year;
+			e = new Manager();
+			e = Employee.Lookup("Joe");
+			year = e.GetYearEmployed();
+			e.CallEpmloyee();
         }
+
 
 		/*
 		public override bool Equals(object obj)

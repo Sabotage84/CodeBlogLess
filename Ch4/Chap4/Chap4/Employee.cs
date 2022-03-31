@@ -18,9 +18,20 @@ namespace Chap4
             a = _a;
         }
 
-        public void CallEpmloyee()
+        public int GetYearEmployed()
+        {
+            return 5;
+        }
+
+        public virtual void CallEpmloyee()
         {
             Console.WriteLine("Emploee class!");
         }
+
+        public static Employee Lookup(string s)
+        {
+            return new Manager(s);
+        }
+
     }
 }

@@ -24,5 +24,10 @@ namespace Chap4
         {
             this.a = b;
         }
+
+        public override void CallEpmloyee()
+        {
+            Console.WriteLine("Call Manager!");
+        }
     }
 }
