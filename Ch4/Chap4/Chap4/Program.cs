@@ -43,6 +43,17 @@ namespace Chap4
 			Employee e1 = (Employee)o; //possible runtime error
         }
 
+		void M1()
+        {
+			string name = "Joe";
+			M2(name);
+        }
+
+		void M2(string n)
+        {
+
+        }
+
 		/*
 		public override bool Equals(object obj)
 		{
