@@ -60,9 +60,12 @@ namespace Chap4
 			Employee e;                     // e=null			
 			int year;						// year=0			
 			e = new Manager();				//				создание объекта Manager->Ссылка на объект, блок синхронизации, поля, статики, методы.
-			e = Employee.Lookup("Joe");		//				
-			year = e.GetYearEmployed();		//					
-			e.CallEpmloyee();				//				
+			e = Employee.Lookup("Joe");		//joe,			сщздание еще одного manager и присвоение e новому объекту, старый manager скоро будет удален
+											//запомнили точку возврата				
+			year = e.GetYearEmployed();		//вызывается метод из emploee year=5							
+			e.CallEpmloyee();               //	вызывается метод из manager так как e ссылается на объект тип manager
+			e.foo();						//вызывается emploee метод почему???
+
         }
 
 

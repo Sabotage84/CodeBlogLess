@@ -33,5 +33,10 @@ namespace Chap4
             return new Manager(s);
         }
 
+        public void foo()
+        {
+            Console.WriteLine("Emploee class77!");
+        }
+
     }
 }

@@ -29,5 +29,10 @@ namespace Chap4
         {
             Console.WriteLine("Call Manager!");
         }
+
+        new public void foo()
+        {
+            Console.WriteLine("Manager class55!");
+        }
     }
 }
