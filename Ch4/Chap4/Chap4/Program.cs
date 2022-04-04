@@ -54,15 +54,15 @@ namespace Chap4
 			int length = n.Length;//стек заполняется переменными 
 			int tally;//из вызванного метода м2
         }//выход и возвращение стека на точку возврата в м1
-
-		static void M3()
-        {
-			Employee e;
-			int year;
-			e = new Manager();
-			e = Employee.Lookup("Joe");
-			year = e.GetYearEmployed();
-			e.CallEpmloyee();
+											//стек			куча
+		static void M3()					//				
+        {									//					
+			Employee e;                     // e=null			
+			int year;						// year=0			
+			e = new Manager();				//				создание объекта Manager->Ссылка на объект, блок синхронизации, поля, статики, методы.
+			e = Employee.Lookup("Joe");		//				
+			year = e.GetYearEmployed();		//					
+			e.CallEpmloyee();				//				
         }
 
 
