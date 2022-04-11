@@ -30,7 +30,7 @@ namespace chap5
             {
                 byte bb = 100;
                 bb = unchecked((byte)(bb + 500));//В проверяемой зоне переполнение как обычно
-                Console.WriteLine(bb.ToString());
+                Console.WriteLine(bb.ToString());//checked нужен для выявления например всех переполнений 
             }
             Console.ReadLine();
         }
