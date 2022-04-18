@@ -30,6 +30,38 @@ namespace Ch5_2
             s1.x = 1;
             s1.y = 2;
             Console.WriteLine($"S1 x = {s1.x} y = {s1.y}");
+
+            Str s2 = new Str();
+            s2 = s1;
+            Console.WriteLine($"S1 x = {s1.x} y = {s1.y}");
+            Console.WriteLine($"S2 x = {s2.x} y = {s2.y}");
+
+            Console.WriteLine("Inc S2");
+            s2.x += 10;
+            s2.y += 10;
+
+            Console.WriteLine($"S1 x = {s1.x} y = {s1.y}");
+            Console.WriteLine($"S2 x = {s2.x} y = {s2.y}");
+
+            MyClass my1 = new MyClass();
+            my1.k = 5;
+            my1.l = 6;
+
+            MyClass my2 = new MyClass();
+            my2 = my1;
+
+            Console.WriteLine($"My1 x = {my1.l} y = {my1.k}");
+            Console.WriteLine($"My2 x = {my2.l} y = {my2.k}");
+
+            Console.WriteLine("Inc my2");
+
+            my2.k += 10;
+            my2.l += 10;
+
+            Console.WriteLine($"My1 x = {my1.l} y = {my1.k}");
+            Console.WriteLine($"My2 x = {my2.l} y = {my2.k}");
+
+
             Console.ReadKey();
         }
     }
@@ -47,7 +79,7 @@ namespace Ch5_2
 
     class MyClass
     {
-        int l;
-        int k;
+        public int l;
+        public int k;
     }
 }
