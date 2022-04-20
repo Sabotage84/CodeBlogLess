@@ -62,6 +62,14 @@ namespace Ch5_2
             Console.WriteLine($"My2 x = {my2.l} y = {my2.k}");
 
 
+            //BOXING UNBOXING
+
+            int b = 6;
+
+            object o = b; //boxing
+            int un = (int)o;//unboxing
+
+
             Console.ReadKey();
         }
     }
