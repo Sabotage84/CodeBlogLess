@@ -69,6 +69,10 @@ namespace Ch5_2
             object o = b; //boxing
             int un = (int)o;//unboxing
 
+            //  byte bb = (byte)o;//будет ошибка во время выполнения
+
+            byte bb = (byte)(int)o;//надо вот так
+
 
             Console.ReadKey();
         }
