@@ -85,6 +85,27 @@ namespace Ch5_2
 
             Console.WriteLine(p.x + "!");//выполняется упаковка на которую уходит много рессурсов
 
+            Point2 p21 = new Point2(10, 10);
+            Point2 p22 = new Point2(20, 20);
+
+            Console.WriteLine(p21.ToString());//NOT boxing
+
+            Console.WriteLine(p21.GetType());//boxing
+
+            Console.WriteLine(p21.CompareTo(p22));// not boxing
+
+            IComparable c = p21;//boxing
+
+            Console.WriteLine(c.GetType());//not boxing
+
+            Console.WriteLine(c.CompareTo(p22));//p22 boxing
+
+            Console.WriteLine(p22.CompareTo(c));//not boxing
+
+            p22 = (Point2)c;//unboxing
+
+            Console.WriteLine(p22.ToString());//not boxing
+
 
 
             Console.ReadKey();
