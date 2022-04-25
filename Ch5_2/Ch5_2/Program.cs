@@ -69,9 +69,22 @@ namespace Ch5_2
             object o = b; //boxing
             int un = (int)o;//unboxing
 
-            //  byte bb = (byte)o;//будет ошибка во время выполнения
+            //  byte bb = (byte)o;//будет ошибка во время выполнения, компилятор знает что в обжекте храниться инт
 
             byte bb = (byte)(int)o;//надо вот так
+
+            Point p;
+            p.x = 1;
+            p.y = 2;
+
+            object obj = p;
+
+            p.x = 7;//не оказывает влияние на obj
+
+            obj = p;//делается новый объект в кучу, старый будет уничтожен GC
+
+            Console.WriteLine(p.x + "!");//выполняется упаковка на которую уходит много рессурсов
+
 
 
             Console.ReadKey();
