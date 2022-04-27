@@ -23,8 +23,13 @@ namespace Ch5_3
             ((Point)o).Change(3, 3);//unboxing 
             Console.WriteLine(o);//(2,2) так как в o не записалось ничего, мы разбоксили сделав новый объект в стеке и потом вернулись к тому что в куче
 
+            //решение
+            ((IChangePoint)o).Change(3, 3);
+            Console.WriteLine(o);//(3,3)
 
-
+            //такие же проблемы возможны и с unboxing
+            ((IChangePoint)p).Change(5, 5);
+            Console.WriteLine(p);//(2,2)
 
             Console.ReadLine();
         }

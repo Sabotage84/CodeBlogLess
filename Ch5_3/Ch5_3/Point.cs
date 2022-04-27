@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Ch5_3
 {
-    struct Point:IComparable
+    struct Point:IComparable,IChangePoint
     {
         public int x;
         public int y;
