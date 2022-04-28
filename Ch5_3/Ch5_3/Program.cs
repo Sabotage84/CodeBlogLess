@@ -31,7 +31,33 @@ namespace Ch5_3
             ((IChangePoint)p).Change(5, 5);
             Console.WriteLine(p);//(2,2)
 
+            dynamic d1 = 5;
+            dynamic d2 = "S";
+
+            dynamic res1 = Plus(d1);
+            dynamic res2 = Plus(d2);
+
+            Print(res1);
+            Print(res2);
+
+
             Console.ReadLine();
         }
+
+        static dynamic Plus(dynamic arg)
+        {
+            return arg + arg;
+        }
+
+        static void Print(int i)
+        {
+            Console.WriteLine($"int {i}");
+        }
+
+        static void Print(string s)
+        {
+            Console.WriteLine($"string {s}");
+        }
+
     }
 }
