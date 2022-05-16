@@ -10,6 +10,11 @@ namespace Ch6
     {
         static void Main(string[] args)
         {
+            SomeClass sm = new SomeClass();
+
+            Console.WriteLine(sm["lala"]);
+
+            Console.ReadKey();
         }
     }
 }

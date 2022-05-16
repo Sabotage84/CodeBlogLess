@@ -41,6 +41,11 @@ namespace Ch6
 
         }
 
+        public void ParamsMeth(params int[] items)
+        {
+
+        }
+
         public int SomeProp { get; set; }
 
         public int SomeProperty 
@@ -55,6 +60,10 @@ namespace Ch6
             set { }
         }
 
-        public EventHandler SomeEvent;
+        public EventHandler SomeDelegate;
+        public event EventHandler SomeEvent;
+
+
+
     }
 }
