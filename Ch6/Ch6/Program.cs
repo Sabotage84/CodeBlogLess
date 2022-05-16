@@ -11,6 +11,10 @@ namespace Ch6
         static void Main(string[] args)
         {
             SomeClass sm = new SomeClass();
+            int i = 1;
+            string s = "00";
+
+            var t = i + s;
 
             Console.WriteLine(sm["lala"]);
 
