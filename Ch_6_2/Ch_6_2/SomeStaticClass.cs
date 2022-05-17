@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,7 +14,7 @@ namespace Ch_6_2
 
         }
 
-        public static void SomeMeth() { }
+        public static void SomeMeth(int x = 5) { }
 
         private static string someField;
 
@@ -21,6 +22,6 @@ namespace Ch_6_2
 
         public static int SomeProp { get; set; }
 
-
+        
     }
 }

@@ -10,6 +10,15 @@ namespace Ch_6_2
     {
         static void Main(string[] args)
         {
+            // SomeStaticClass(6);
+            B bb = new B();
+            bb.Update();
+
+            A ba = new B();
+            ba.Update();
+
+            Console.ReadKey();
+
         }
     }
 }
