@@ -45,6 +45,8 @@
   <ItemGroup>
     <Compile Include="A.cs" />
     <Compile Include="B.cs" />
+    <Compile Include="ClosedClass1.cs" />
+    <Compile Include="Employee.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SomeClass.cs" />

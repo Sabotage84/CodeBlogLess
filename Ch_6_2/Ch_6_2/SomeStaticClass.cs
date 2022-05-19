@@ -9,6 +9,7 @@ namespace Ch_6_2
 {
     static class SomeStaticClass
     {
+       
         static SomeStaticClass()
         {
 
