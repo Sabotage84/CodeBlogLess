@@ -66,4 +66,20 @@ namespace Ch6
 
 
     }
+
+    public static class newclassStatic
+    {
+        public static readonly SomeClass sc;
+
+        static newclassStatic()
+        {
+            sc = new SomeClass();
+        }
+
+        public static void Change()
+        {
+            sc.SomeProp = 5;// ридонли можно менять если это ссылочный тип
+        }
+    }
+
 }
