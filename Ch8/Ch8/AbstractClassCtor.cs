@@ -16,6 +16,10 @@ namespace Ch8
         {
 
         }
+        //abstract public AbstractClassCtor() конструктор абстрактным быть не может
+        //{
+
+        //}
 
     }
 }
