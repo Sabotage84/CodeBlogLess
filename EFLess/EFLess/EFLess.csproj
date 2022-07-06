@@ -54,6 +54,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Group.cs" />
+    <Compile Include="Migrations\202207062009207_InitialCreate.cs" />
+    <Compile Include="Migrations\202207062009207_InitialCreate.designer.cs">
+      <DependentUpon>202207062009207_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202207062116180_AddGroupType.cs" />
+    <Compile Include="Migrations\202207062116180_AddGroupType.designer.cs">
+      <DependentUpon>202207062116180_AddGroupType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="MyDBContext.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -62,6 +71,14 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202207062009207_InitialCreate.resx">
+      <DependentUpon>202207062009207_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202207062116180_AddGroupType.resx">
+      <DependentUpon>202207062116180_AddGroupType.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
