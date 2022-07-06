@@ -33,6 +33,11 @@ namespace EFLess
                 context.Groups.Add(group2);
                 context.SaveChanges();
 
+
+                var s = context.Groups.Single(x => x.Id == group2.Id);
+                s.Year = 1983;
+                context.SaveChanges();
+
                 var songs = new List<Song>()
                 {
                     new Song{Name="Камнем по голове", GroupId=group.Id },
@@ -45,10 +50,8 @@ namespace EFLess
 
                 foreach (var item in songs)
                 {
-                    Console.WriteLine($"Id: {item.Id}, Name: {item.Name}, Group: {item.Group.Name}");
+                    Console.WriteLine($"Id: {item.Id}, Name: {item.Name}, Group: {item.Group.Name}, Group Year: {item.Group.Year} ");
                 }
-                
-                //Console.WriteLine($"Id: {group.Id}, Name: {group.Name}, Year: {group.Year}");
                 Console.ReadLine();
             }
         }
