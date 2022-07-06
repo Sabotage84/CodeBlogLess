@@ -10,6 +10,19 @@ namespace EFLess
     {
         static void Main(string[] args)
         {
+            using (var context = new MyDBContext())
+            {
+                var group = new Group()
+                {
+                    Name = "Король и Шут",
+                    Year = 1988
+                };
+                context.Groups.Add(group);
+                context.SaveChanges();
+
+                Console.WriteLine($"Id: {group.Id}, Name: {group.Name}, Year: {group.Year}");
+                Console.ReadLine();
+            }
         }
     }
 }

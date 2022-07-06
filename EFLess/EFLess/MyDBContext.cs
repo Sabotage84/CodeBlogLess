@@ -7,8 +7,13 @@ namespace EFLess
 {
     public class MyDBContext : DbContext
     {
-        protected MyDBContext(): base("DbConnectionString")
+        public MyDBContext(): base("DbConnectionString")
         {
         }
+
+        public DbSet<Group> Groups { get; set; }
+
+        public DbSet<Song> Songs { get; set; }
+
     }
 }
