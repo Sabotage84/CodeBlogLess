@@ -13,6 +13,7 @@ namespace AsyncAwait
 
             DoWorkAsync();
 
+            DoWork2Async(int.MaxValue);
 
             int j = 0;
             for (int i = 0; i < int.MaxValue; i++)
@@ -29,6 +30,11 @@ namespace AsyncAwait
         static async Task DoWorkAsync()
         {
             await Task.Run(() => DoWork());
+        }
+
+        static async Task DoWork2Async(int i)
+        {
+            await Task.Run(() => DoWork2(i));
         }
 
         static void DoWork()
