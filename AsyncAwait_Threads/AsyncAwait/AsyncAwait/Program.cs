@@ -26,12 +26,20 @@ namespace AsyncAwait
             //    }
             //}
 
-            var result = SaveFile("d:\\test.txt");
-
-
+            var result = SaveFileAsync("d:\\test.txt");
+            var input = Console.ReadLine();
+            Console.WriteLine(result.Result);
+            
 
 
             Console.ReadLine();
+        }
+
+
+        static async Task<bool> SaveFileAsync(string path)
+        {
+            var result = await Task<bool>.Run(() => SaveFile(path));
+            return result;
         }
 
         private static bool SaveFile(string path)
