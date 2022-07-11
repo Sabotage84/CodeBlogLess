@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,20 +12,44 @@ namespace AsyncAwait
         static void Main(string[] args)
         {
 
-            DoWorkAsync();
+            //DoWorkAsync();
 
-            DoWork2Async(int.MaxValue);
+            //DoWork2Async(int.MaxValue);
 
-            int j = 0;
-            for (int i = 0; i < int.MaxValue; i++)
+            //int j = 0;
+            //for (int i = 0; i < int.MaxValue; i++)
+            //{
+            //    j++;
+            //    if (j % 100000 == 0)
+            //    {
+            //        Console.WriteLine("MAin");
+            //    }
+            //}
+
+            var result = SaveFile("d:\\test.txt");
+
+
+
+
+            Console.ReadLine();
+        }
+
+        private static bool SaveFile(string path)
+        {
+
+            var rnd = new Random();
+            var str = "";
+            for (int i = 0; i < 50000; i++)
             {
-                j++;
-                if (j % 100000 == 0)
-                {
-                    Console.WriteLine("MAin");
-                }
+                str += rnd.Next();
             }
-            Console.ReadKey();
+
+            using (var sr = new StreamWriter(path, false, Encoding.UTF8))
+            {
+                sr.WriteLine(str);
+            }
+
+            return true;
         }
 
         static async Task DoWorkAsync()
