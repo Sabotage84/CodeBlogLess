@@ -9,6 +9,7 @@ namespace AsyncAwait
 {
     class Program
     {
+        private static object obj = new object();
         static void Main(string[] args)
         {
 
@@ -73,12 +74,15 @@ namespace AsyncAwait
         static void DoWork()
         {
             int j = 0;
-            for (int i = 0; i < int.MaxValue; i++)
+            lock (obj)
             {
-                j++;
-                if (j % 100000 == 0)
+                for (int i = 0; i < int.MaxValue; i++)
                 {
-                    Console.WriteLine("DoWork");
+                    j++;
+                    if (j % 100000 == 0)
+                    {
+                        Console.WriteLine("DoWork");
+                    }
                 }
             }
         }
