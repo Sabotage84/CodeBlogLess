@@ -13,15 +13,27 @@ namespace AnonymousMeth
         {
             int r = 7;
 
-            MyHandler handler = delegate (int i)
+            MyHandler handler = delegate (int i)//добавление анонимного метода
              {
                  Console.WriteLine(i * i);
                  return i * i;
              };
 
-            handler += MyMeth;
-            
-            handler(r);
+            handler += MyMeth;//добавление просто метода
+
+            handler += (i) =>
+            {
+                Console.WriteLine(i * i * i * i);//Когда много строк в лямбда
+                return i * i * i * i;
+            };
+
+            handler += (i) => 2 * i;//В одну строку
+          
+
+           
+
+            Console.WriteLine( handler(r));// в делегате сохраняется результат последнего метода
+
             Console.ReadLine();
         }
 
