@@ -23,6 +23,20 @@ namespace LambdaEx
             ls.Start();
 
 
+
+            List<int> lst = new List<int>();
+            for (int i = 0; i < 100; i++)
+            {
+                lst.Add(i);
+            }
+
+            var res = lst.Aggregate((x, y) => x + y);
+            Console.WriteLine(res);
+
+
+
+
+
             Console.ReadLine();
         }
     }
