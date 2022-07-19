@@ -12,7 +12,7 @@ namespace LinqLesson
         {
             List<int> lst = new List<int>();
 
-            for (int i = 0; i < 10000; i++)
+            for (int i = 0; i < 1000; i++)
             {
                 lst.Add(i);
             }
@@ -20,7 +20,9 @@ namespace LinqLesson
                          where item < 500
                          select item;
 
-            foreach (var item in result)
+            var result2 = lst.Where(item => item % 2 == 0);
+
+            foreach (var item in result2)
             {
                 Console.WriteLine(item);
             }
