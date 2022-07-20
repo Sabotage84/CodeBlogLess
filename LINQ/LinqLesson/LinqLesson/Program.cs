@@ -51,6 +51,9 @@ namespace LinqLesson
                 }
             }
 
+            Console.WriteLine(lst.All(p=>p.Energy==150));
+            Console.WriteLine(lst.Any(p => p.Energy == 150));
+
             Console.ReadKey();
         }
     }
