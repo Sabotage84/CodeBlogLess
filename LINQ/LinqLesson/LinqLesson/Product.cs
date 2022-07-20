@@ -17,5 +17,11 @@ namespace LinqLesson
             Product p = obj as Product;
             return p.Energy.CompareTo(Energy);
         }
+
+        public override string ToString()
+        {
+            return Name + "   " + Energy;
+
+        }
     }
 }

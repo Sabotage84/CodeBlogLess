@@ -28,10 +28,14 @@ namespace LinqLesson
 
             var result3 = lst.Where(item => item.Energy % 2 == 0).Where(x=>x.Energy%5==0).OrderByDescending(item=>item);
 
+            var res4 = lst.Select(p => p.Energy);
 
-            foreach (var item in result3)
+            var result5 = lst.Where(item => item.Energy % 2 == 0).Where(x => x.Energy % 5 == 0).OrderByDescending(item => item.Energy).ThenBy(x=>x.Name);
+
+
+            foreach (var item in result5)
             {
-                Console.WriteLine(item.Name + "   "+ item.Energy);
+                Console.WriteLine(item);
             }
             Console.ReadKey();
         }
