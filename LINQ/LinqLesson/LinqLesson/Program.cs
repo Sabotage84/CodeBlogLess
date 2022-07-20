@@ -16,7 +16,7 @@ namespace LinqLesson
             Random rnd = new Random();
             for (int i = 0; i < 1000; i++)
             {
-                var p = new Product { Name = "Продукт " + i, Energy = rnd.Next(10, 500) };
+                var p = new Product { Name = "Продукт " + i, Energy = rnd.Next(100, 200) };
 
                 lst.Add(p);
             }
@@ -37,6 +37,20 @@ namespace LinqLesson
             {
                 Console.WriteLine(item);
             }
+            Console.WriteLine();
+            Console.WriteLine();
+            Console.WriteLine();
+
+
+            var groupCollection = lst.GroupBy(p => p.Energy);
+            foreach (var group in groupCollection)
+            {
+                foreach (var item in group)
+                {
+                    Console.WriteLine(item);
+                }
+            }
+
             Console.ReadKey();
         }
     }
