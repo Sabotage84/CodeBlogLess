@@ -22,7 +22,10 @@ namespace LinqLesson
 
             var result2 = lst.Where(item => item % 2 == 0);
 
-            foreach (var item in result2)
+            var result3 = lst.Where(item => item % 2 == 0).Where(x=>x%5==0).OrderByDescending(item=>item);
+
+
+            foreach (var item in result3)
             {
                 Console.WriteLine(item);
             }
