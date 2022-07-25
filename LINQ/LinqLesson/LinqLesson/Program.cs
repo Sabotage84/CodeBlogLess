@@ -100,6 +100,18 @@ namespace LinqLesson
             Console.WriteLine();
             Console.WriteLine(sum2);
 
+            var first = array.First();//возвращает первый элемент, если массив пустой исключение
+            var first2 = array.FirstOrDefault();//возвращает первый элемент, если массивзначение по умолчанию
+                                                // так же с последним
+
+            var first3 = lst.First(a => a.Energy == 67);//первый с энергией 67
+            var single = lst.Single(a => a.Energy == 67);//если больше одного с энергией 67 - исключение
+
+            var element = lst.ElementAt(3);//по индексу
+
+            var element2 = lst.ElementAtOrDefault(-1);//по индексу или дефолт если вне диапазона
+
+            Console.WriteLine(element2);
 
             Console.ReadKey();
         }
