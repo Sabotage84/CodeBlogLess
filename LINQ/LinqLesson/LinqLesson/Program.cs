@@ -14,9 +14,9 @@ namespace LinqLesson
 
 
             Random rnd = new Random();
-            for (int i = 0; i < 1000; i++)
+            for (int i = 0; i < 100; i++)
             {
-                var p = new Product { Name = "Продукт " + i, Energy = rnd.Next(100, 200) };
+                var p = new Product { Name = "Продукт " + i, Energy = rnd.Next(60, 100) };
 
                 lst.Add(p);
             }
@@ -47,12 +47,37 @@ namespace LinqLesson
             {
                 foreach (var item in group)
                 {
-                    Console.WriteLine(item);
+                    Console.WriteLine(group.Key + "  ->  "+item);
                 }
             }
 
-            Console.WriteLine(lst.All(p=>p.Energy==150));
-            Console.WriteLine(lst.Any(p => p.Energy == 150));
+            Console.WriteLine(lst.All(p=>p.Energy==90));
+            Console.WriteLine(lst.Any(p => p.Energy == 90));
+
+            var array = new int[] { 1, 2, 3, 4 };
+            var array2 = new int[] { 3, 4, 5, 6, 7, 8 };
+
+            var unionArray = array.Union(array2);
+
+            foreach (var item in unionArray)
+            {
+                Console.WriteLine(item);
+            }
+            Console.WriteLine();
+            var intersectArray = array.Intersect(array2);
+
+            foreach (var item in intersectArray)
+            {
+                Console.WriteLine(item);
+            }
+
+            Console.WriteLine();
+            var ex = array.Except(array2);
+
+            foreach (var item in ex)
+            {
+                Console.WriteLine(item);
+            }
 
             Console.ReadKey();
         }
