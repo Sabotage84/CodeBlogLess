@@ -51,8 +51,8 @@ namespace LinqLesson
                 }
             }
 
-            Console.WriteLine(lst.All(p=>p.Energy==90));
-            Console.WriteLine(lst.Any(p => p.Energy == 90));
+            Console.WriteLine(lst.All(p=>p.Energy==90));//все 90?
+            Console.WriteLine(lst.Any(p => p.Energy == 90));//Хотя бы один 90?
 
             var array = new int[] { 1, 2, 3, 4 };
             var array2 = new int[] { 3, 4, 5, 6, 7, 8 };
@@ -72,12 +72,34 @@ namespace LinqLesson
             }
 
             Console.WriteLine();
-            var ex = array.Except(array2);
+            var ex = array.Except(array2);//вычитание одного из другого
 
             foreach (var item in ex)
             {
                 Console.WriteLine(item);
             }
+
+            var sum = lst.Sum(p=>p.Energy);
+            Console.WriteLine();
+            Console.WriteLine(sum);
+
+            var max = lst.Max(p => p.Energy);
+            var min = lst.Min(p => p.Energy);
+
+            Console.WriteLine();
+            Console.WriteLine(min+"     "+ max);
+
+            var aggregate = array.Aggregate((x,y) => y * x);//задаем свою функцию
+                                                            // так как функция нужно минимум два значения
+                                                            //результат и вход
+
+            Console.WriteLine();
+            Console.WriteLine(aggregate);
+
+            var sum2 = lst.Skip(2).Take(20).Sum(p => p.Energy);//пропускаем первые 2 и берем следующие 20
+            Console.WriteLine();
+            Console.WriteLine(sum2);
+
 
             Console.ReadKey();
         }
