@@ -33,6 +33,17 @@ namespace Ch8_2
             Im = 0;
         }
 
+
+        public static implicit operator Complex(int i)//в конструкторе логика преобразования из инта в комплекс
+        {                                               // тут просто вызываем
+            return new Complex(i);
+        }
+
+        public static explicit operator int(Complex c)//обратно
+        {
+            return c.ToInt();
+        }
+
         public int ToInt()
         {
             return (int)Re;

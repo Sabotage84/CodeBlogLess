@@ -21,6 +21,8 @@ namespace Ch8_2
 
             var i = c4.ToInt();//из комплекса в инт
 
+            Complex c5 = 88;//короткие формы доступны после перегрузки операторов
+            int j = (int)c5;
 
             Console.ReadLine();
         }
