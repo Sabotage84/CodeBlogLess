@@ -6,7 +6,15 @@ using System.Threading.Tasks;
 
 namespace Ch8_3
 {
-    class MyExtensions
+    public static class MyExtensions
     {
+        public static void Print<T>(this IEnumerable<T> lst)//метод расширения для интерфейса
+        {
+            foreach (var item in lst)
+            {
+                Console.WriteLine(item);
+            }
+        }
+
     }
 }
