@@ -17,6 +17,11 @@ namespace Ch8_2
             Complex c3 = c1 + c2;
             Console.WriteLine(c3);
 
+            var c4 = new Complex(77);//из инта в комплекс
+
+            var i = c4.ToInt();//из комплекса в инт
+
+
             Console.ReadLine();
         }
     }

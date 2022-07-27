@@ -27,6 +27,17 @@ namespace Ch8_2
             return c1 + c2;
         }
 
+        public Complex(int re)
+        {
+            Re = re;
+            Im = 0;
+        }
+
+        public int ToInt()
+        {
+            return (int)Re;
+        }
+
         public override string ToString()
         {
             return Re+" + i"+ Im;
