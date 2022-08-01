@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Ch8_3
 {
-    sealed partial class Base
+    sealed partial class Base//автогенирируемый класс в отдельном файле
     {
         string name;
 
@@ -29,7 +29,7 @@ namespace Ch8_3
         }
     }
 
-    sealed partial class Base
+    sealed partial class Base//файл класса написанный юзером, при изменении автогенерируемого этот не пропадет
     {
         partial void OnNameChanged(string newName)
         {
