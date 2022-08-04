@@ -21,7 +21,10 @@ namespace Ch_9_2
             AddValue(ref y);
             Console.WriteLine(y);
 
-
+            Dog d = new Dog("Харлей Дэвинсон");
+            Console.WriteLine(d);
+            ChangeDogNAme(ref d, "Харлей");
+            Console.WriteLine(d);
 
             Console.ReadKey();
 
@@ -35,6 +38,12 @@ namespace Ch_9_2
         private static void GetVAlue(out int x)
         {
             x = 10;
+        }
+
+        private static void ChangeDogNAme( ref Dog d,string s)
+        {
+            d = new Dog(s);
+            Console.WriteLine(d);
         }
     }
 }
