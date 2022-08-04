@@ -13,11 +13,22 @@ namespace Ch_9
         {
             MyMeth(); //простой вызов метода все параметры по умолчанию
             MyMeth(8, "X");//первые параметры по очереди заданы при вызове
+            //MyMeth(8, "X", ,new Guid() ); пропускать нельзя
             MyMeth(7, g: Guid.NewGuid(), dt: DateTime.Now);//в разнобой поименно
             MyMeth(value++, value++.ToString());//пример не очевидного пост инкремента
             Console.WriteLine(value);//и далее
             MyMeth(s: (value++).ToString(), x: value++);//и далее
             Console.WriteLine(value);//и далее
+
+
+
+            //ТАК нельзя
+            //var a;
+            //var a= null;
+            //var - синтаксический сахар
+
+
+
             Console.ReadKey();
 
 
