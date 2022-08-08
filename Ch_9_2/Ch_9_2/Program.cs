@@ -39,6 +39,10 @@ namespace Ch_9_2
             Console.WriteLine(s1+s2);
 
 
+            //params
+            Console.WriteLine(Sum(new int[] { 1, 2, 3, 4 }));//громоздский вызов
+            Console.WriteLine(Sum(1,2,3,4));//нормальный вызов
+
             Console.ReadKey();
 
         }
@@ -77,6 +81,17 @@ namespace Ch_9_2
         {
             d = new Dog(s);
             Console.WriteLine(d);
+        }
+
+        private static int Sum(params int[] values)
+        {
+            int res = 0;
+            foreach (var item in values)
+            {
+                res += item;
+            }
+
+            return res;
         }
     }
 }
