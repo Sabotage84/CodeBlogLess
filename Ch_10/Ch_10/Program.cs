@@ -10,6 +10,8 @@ namespace Ch_10
     {
         static void Main(string[] args)
         {
+            //автосвойства зло
+            //свойства замедляют прогу
         }
     }
 }

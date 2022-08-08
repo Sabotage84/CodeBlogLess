@@ -42,6 +42,7 @@ namespace Ch_9_2
             //params
             Console.WriteLine(Sum(new int[] { 1, 2, 3, 4 }));//громоздский вызов
             Console.WriteLine(Sum(1,2,3,4));//нормальный вызов
+            Console.WriteLine(Sum(null));
 
             Console.ReadKey();
 
