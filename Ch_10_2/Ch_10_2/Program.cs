@@ -10,6 +10,10 @@ namespace Ch_10_2
     {
         static void Main(string[] args)
         {
+            BitArray ba = new BitArray(14);
+
+            Console.WriteLine();
+            Console.ReadKey();
         }
     }
 }
