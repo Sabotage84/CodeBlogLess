@@ -19,7 +19,13 @@ namespace Ch_10_3
             var employee2 = new Employee();
             employee2.Name = "v2";
             employee2.Age = 22;
-           
+
+
+            //создание и сразу применение 
+            var empName = new Employee() { Name = "v3", Age = 23 }.ToString().ToUpper();
+
+            //вариант с параметром
+            var emp4 = new Employee("v4") { Age = 33 };
 
         }
     }

@@ -10,5 +10,19 @@ namespace Ch_10_3
     {
         public string Name { get; set; }
         public int Age { get;  set; }
+
+        public override string ToString()
+        {
+            return Name;
+        }
+        public Employee()
+        {
+
+        }
+        public Employee(string n)
+
+        {
+            Name = n;
+        }
     }
 }
