@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Ch_10_3
 {
-    public class Employee
+    public class Student
     {
         public string Name { get; set; }
         public int Age { get;  set; }
@@ -15,11 +15,11 @@ namespace Ch_10_3
         {
             return Name;
         }
-        public Employee()
+        public Student()
         {
 
         }
-        public Employee(string n)
+        public Student(string n)
 
         {
             Name = n;
