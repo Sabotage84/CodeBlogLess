@@ -20,7 +20,11 @@ namespace Ch_10_6
             Console.WriteLine();
 
 
+            (int ID, string Name) vt3 = (1, "Value Type 3");
+            Console.WriteLine(vt3.ID+" - "+vt3.Name);
 
+            var vt4 = (ID: 2, Name: "Value Type 5");
+            Console.WriteLine(vt4.ID + " - " + vt4.Name);
 
             Console.ReadLine();
 
