@@ -28,7 +28,10 @@ namespace Ch_11
 
         public void SimulateNewMail(string from, string to , string subject)
         {
+            var e = new NewMailEventArgs(from, to, subject);
 
+
+            OnNewMail(e);
         }
     }
 }
