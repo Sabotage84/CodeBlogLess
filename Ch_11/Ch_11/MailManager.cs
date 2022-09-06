@@ -12,7 +12,18 @@ namespace Ch_11
 
         protected virtual void OnNewMail(NewMailEventArgs e)
         {
+            //проверяем не равно ли е null
+            _ = e ?? throw new ArgumentNullException(nameof(e));
+
+
+            //могут быть проблемы с многопоточностью
             NewMail?.Invoke(this, e);
+
+            //вариант 2 
+            //решает проблему но поведение компилятора может измениться
+            var temp = NewMail;
+            temp?.Invoke(this, e);
+
         }
 
         public void SimulateNewMail(string from, string to , string subject)
