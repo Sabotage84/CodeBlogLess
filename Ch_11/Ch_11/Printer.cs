@@ -12,5 +12,11 @@ namespace Ch_11
         {
             Console.WriteLine("Printer: "+text);
         }
+
+        public void PrNewMail(object sender, NewMailEventArgs e)
+        {
+            Console.WriteLine("PrNewMail: " + e.To);
+        }
+
     }
 }
