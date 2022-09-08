@@ -10,7 +10,7 @@ namespace Ch_11_2
     {
         static void Main(string[] args)
         {
-            //все в 11
+            //см. в 11
         }
     }
 }
