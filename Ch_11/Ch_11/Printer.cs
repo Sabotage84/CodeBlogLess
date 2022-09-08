@@ -18,5 +18,19 @@ namespace Ch_11
             Console.WriteLine("PrNewMail: " + e.To);
         }
 
+        public Printer(MailManager mm)
+        {
+            mm.NewMail += OnNewMailEvent;
+        }
+
+        private void OnNewMailEvent(object sender, NewMailEventArgs e)
+        {
+            Console.WriteLine("OnNewMailEvent called");
+        }
+
+        public void Unredister(MailManager mm)
+        {
+            mm.NewMail -= OnNewMailEvent;
+        }
     }
 }

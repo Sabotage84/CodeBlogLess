@@ -16,7 +16,7 @@ namespace Ch_11
             //второй способ
             var sms = new SMS(mm);
             //третий способ
-            var p = new Printer();
+            var p = new Printer(mm);
             mm.NewMail += p.PrNewMail;
 
             mm.SimulateNewMail("I", "You", "Shit");
@@ -28,8 +28,8 @@ namespace Ch_11
             //var sms = new SMS();
             //sms.Send(e.Subject);
 
-            var printer = new Printer();
-            printer.Print(e.From);
+            //var printer = new Printer();
+            //printer.Print(e.From);
         }
     }
 }
