@@ -10,6 +10,8 @@ namespace Ch_12_2
     {
         static void Main(string[] args)
         {
+            //открытый тип List<T>
+            //закрытый тип List<int>
         }
     }
 }
