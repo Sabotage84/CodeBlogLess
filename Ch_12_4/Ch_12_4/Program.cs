@@ -10,6 +10,7 @@ namespace Ch_12_4
     {
         static void Main(string[] args)
         {
+            //все еще ждем стрим см.12-5
         }
     }
 }
