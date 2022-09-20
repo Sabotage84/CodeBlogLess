@@ -10,6 +10,12 @@ namespace Ch_12_5
     {
         static void Main(string[] args)
         {
+            List<int> lst = new List<int>();
+            List<string> lst2 = new List<string>();
+            //  public class List<T> : IList<T>, ICollection<T>, IEnumerable<T>, IEnumerable, IList, ICollection, IReadOnlyList<T>, IReadOnlyCollection<T>
+
+            
+            
         }
     }
 }
