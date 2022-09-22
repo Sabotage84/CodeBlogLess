@@ -16,4 +16,15 @@ namespace Ch_12_5
             return default(TValue);
         }
     }
+
+    public class PPClass<TKey> : PClass <TKey,string>//Пока все типы не определены, класс открытый
+    {
+
+    }
+
+    public class DictionaryString<TValue>:Dictionary<string, TValue>
+    {
+
+    }
+
 }

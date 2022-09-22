@@ -14,7 +14,8 @@ namespace Ch_12_5
             List<string> lst2 = new List<string>();
             //  public class List<T> : IList<T>, ICollection<T>, IEnumerable<T>, IEnumerable, IList, ICollection, IReadOnlyList<T>, IReadOnlyCollection<T>
 
-            
+            var d1 = new Dictionary<string, Guid>();//эти типы несовместимы
+            var d2 = new DictionaryString<Guid>();//так как разное наследование
             
         }
     }
