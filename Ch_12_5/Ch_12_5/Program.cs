@@ -5,6 +5,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using Dich2 = System.Collections.Generic.List<
+            System.Collections.Generic.Dictionary<
+                System.Collections.Generic.Dictionary<int,string>, 
+            System.Collections.Generic.Dictionary<char, System.IO.Stream>>>;
+
 namespace Ch_12_5
 {
     class Program
@@ -24,11 +29,38 @@ namespace Ch_12_5
             //проще сделать класс смотри dich
             //и уже использовать так
             Dich d3 = new Dich();
+            //но так может возникнуть проблемы с совместимостью
+            //поэтому лучше использовать using
+
+            //инвариантность - никаких других кроме указанного
+            //контрвариантность - любой наследник
+            //ковариантность любой предок
+
+            Deleg<Child, Child, Child> item = null;
+
+            Deleg<GrandChild, Base, Child> item2 = null;
+
+            item2 = item;
+
+
+
         }
 
         public class Dich : List<Dictionary<Dictionary<int, string>, Dictionary<char, Stream>>>
-            { 
+        { 
         }
 
+        public class Base { }
+
+        public class Child:Base
+        {
+
+        }
+
+        public class GrandChild:Child
+        {
+
+        }
+        public delegate TResult Deleg<in TArg, out TResult, TStandart>(TArg arg);
     }
 }
