@@ -42,8 +42,10 @@ namespace Ch_12_5
 
             item2 = item;
 
+            Class3<int> temp = new Class3<int>();
 
-
+            temp.Meth1<string>("str", 22);
+            Console.ReadLine();
         }
 
         public class Dich : List<Dictionary<Dictionary<int, string>, Dictionary<char, Stream>>>
