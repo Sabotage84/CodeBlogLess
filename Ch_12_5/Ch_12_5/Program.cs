@@ -44,7 +44,7 @@ namespace Ch_12_5
 
             Class3<int> temp = new Class3<int>();
 
-            temp.Meth1<string>("str", 22);
+            temp.Meth1<string>("str ", 22);
             Console.ReadLine();
         }
 
@@ -64,5 +64,14 @@ namespace Ch_12_5
 
         }
         public delegate TResult Deleg<in TArg, out TResult, TStandart>(TArg arg);
+
+
+        //ограничения дают большую свободу так как компилятор понимает что передается в метод
+        private static T Min<T>(T o1, T o2)where T : IComparable<T>
+        {
+            if (o1.CompareTo(o2) < 0) return o1;
+            return o2;
+        }
+
     }
 }
