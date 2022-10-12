@@ -10,6 +10,13 @@ namespace Singleton
     {
         static void Main(string[] args)
         {
+            var text1 = TextFileWorker.Instance;
+
+            text1.WriteText("Hello ");
+            text1.WriteText("world!!!");
+
+            text1.Save();
+
         }
     }
 }
