@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="IMessage.cs" />
     <Compile Include="IMessanger.cs" />
+    <Compile Include="InstagramMessage.cs" />
     <Compile Include="MessageBase.cs" />
     <Compile Include="MessangerBase.cs" />
     <Compile Include="Program.cs" />
@@ -52,6 +53,7 @@
     <Compile Include="TestMessage.cs" />
     <Compile Include="TestMessanger.cs" />
     <Compile Include="TwitterMessage.cs" />
+    <Compile Include="InstagramMessanger.cs" />
     <Compile Include="TwitterMessanger.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -18,6 +18,10 @@ namespace FactoryMethod
             var twit = twitter.CreateMessage("Hello FACTORY METHOD!", "Ivan", "Oleg");
             twit.Send();
 
+            var instagram = new InstagramMessanger("Mary", "Pass2");
+            var photo = instagram.CreateMessage("test.jpg", "MAry", "Ivan");
+            photo.Send();
+
             Console.ReadLine();
         }
     }
