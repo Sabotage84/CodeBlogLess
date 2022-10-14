@@ -13,6 +13,11 @@ namespace FactoryMethod
             var messanger = new TestMessanger("Ivan", "Pass");
             messanger.SendMessage("Hello, Twitter", "Ivan", "Pavel");
 
+
+            var twitter = new TwitterMessanger("Ivan", "Pass");
+            var twit = twitter.CreateMessage("Hello FACTORY METHOD!", "Ivan", "Oleg");
+            twit.Send();
+
             Console.ReadLine();
         }
     }
