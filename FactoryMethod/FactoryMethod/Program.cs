@@ -10,6 +10,10 @@ namespace FactoryMethod
     {
         static void Main(string[] args)
         {
+            var messanger = new TestMessanger("Ivan", "Pass");
+            messanger.SendMessage("Hello, Twitter", "Ivan", "Pavel");
+
+            Console.ReadLine();
         }
     }
 }
