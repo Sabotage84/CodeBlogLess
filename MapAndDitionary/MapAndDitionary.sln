@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31729.503
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MapAndDitionary", "MapAndDitionary\MapAndDitionary.csproj", "{A9971A45-7B03-490A-8AFC-E2EE2ABD4754}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A9971A45-7B03-490A-8AFC-E2EE2ABD4754}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A9971A45-7B03-490A-8AFC-E2EE2ABD4754}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A9971A45-7B03-490A-8AFC-E2EE2ABD4754}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A9971A45-7B03-490A-8AFC-E2EE2ABD4754}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4AF03F2C-FAEC-4EB3-9959-488F2423633E}
+	EndGlobalSection
+EndGlobal
