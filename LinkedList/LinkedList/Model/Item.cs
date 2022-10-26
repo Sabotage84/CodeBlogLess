@@ -10,5 +10,24 @@ namespace LinkedList.Model
     {
         private T data = default(T);
         private Item<T> next = null;
+
+        public T Data
+        {
+            get { return data; }
+
+            set 
+            {
+                if (value != null)
+                    data = value;
+                else
+                    throw new ArgumentNullException(nameof (value));
+            }
+        }
+
+        public Item<T> Next { get => next; set => next = value; }
+        public Item(T data)
+        {
+            Data = data;
+        }
     }
 }
