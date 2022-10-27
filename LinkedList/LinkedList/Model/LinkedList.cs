@@ -92,6 +92,7 @@ namespace LinkedList.Model
         public IEnumerator<T> GetEnumerator()
         {
             var current = Head;
+            Console.WriteLine(typeof(T));
             while (current!=null)
             {
                 yield return current.Data;
