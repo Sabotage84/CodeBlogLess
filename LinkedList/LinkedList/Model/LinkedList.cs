@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace LinkedList.Model
 {
-    public class LinkedList<T>
+    public class LinkedList<T>:IEnumerable<T>
     {
         public Item<T> Head { get; private set; }
         public Item<T> Tail { get; private set; }
@@ -86,6 +87,21 @@ namespace LinkedList.Model
                 current = current.Next;
             }
             Console.WriteLine(res);
+        }
+
+        public IEnumerator<T> GetEnumerator()
+        {
+            var current = Head;
+            while (current!=null)
+            {
+                yield return current.Data;
+                current = current.Next;
+            }
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return GetEnumerator();
         }
     }
 }

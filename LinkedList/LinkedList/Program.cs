@@ -21,7 +21,15 @@ namespace LinkedList
             lst.Show();
             lst.Delete(5);
             lst.Show();
+            lst.Delete(9);
+            lst.Show();
+            lst.Delete(1);
+            foreach (var item in lst)
+            {
+                Console.Write(item + " ");
 
+            }
+            Console.WriteLine();
             Console.ReadLine();
         }
     }
