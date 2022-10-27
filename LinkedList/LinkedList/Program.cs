@@ -10,6 +10,13 @@ namespace LinkedList
     {
         static void Main(string[] args)
         {
+            var lst = new Model.LinkedList<int>();
+            lst.Add(1);
+            lst.Add(2);
+            lst.Add(3);
+
+
+            Console.ReadLine();
         }
     }
 }
