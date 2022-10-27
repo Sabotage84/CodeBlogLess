@@ -63,6 +63,8 @@ namespace LinkedList.Model
                         Count--;
                         return;
                     }
+                    previous = current;
+                    current = current.Next;
                 }
             }
         }
@@ -74,5 +76,16 @@ namespace LinkedList.Model
             Count = 1;
         }
 
+        public void Show()
+        {
+            string res = "";
+            var current = Head;
+            while (current!=null)
+            {
+                res += current.Data.ToString()+" ";
+                current = current.Next;
+            }
+            Console.WriteLine(res);
+        }
     }
 }

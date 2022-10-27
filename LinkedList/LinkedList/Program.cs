@@ -14,7 +14,13 @@ namespace LinkedList
             lst.Add(1);
             lst.Add(2);
             lst.Add(3);
-
+            lst.Add(4);
+            lst.Add(5);
+            lst.Add(6);
+            lst.Add(7);
+            lst.Show();
+            lst.Delete(5);
+            lst.Show();
 
             Console.ReadLine();
         }
