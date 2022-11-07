@@ -104,5 +104,11 @@ namespace LinkedList.Model
         {
             return GetEnumerator();
         }
+
+        public override string ToString()
+        {
+            return "Linked List " + Count + " elements!";
+        }
+
     }
 }

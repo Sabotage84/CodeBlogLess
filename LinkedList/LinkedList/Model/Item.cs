@@ -8,6 +8,9 @@ namespace LinkedList.Model
 {
     public class Item<T>
     {
+        /// <summary>
+        /// Данные хранимые в ячейкке списка.
+        /// </summary>
         private T data = default(T);
         private Item<T> next = null;
 
