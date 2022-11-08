@@ -30,6 +30,10 @@ namespace LinkedList
 
             }
             Console.WriteLine();
+            lst.InsertAfter("4", "10");
+            lst.AppendHead("0");
+            lst.Show();
+            Console.WriteLine();
             Console.ReadLine();
         }
     }

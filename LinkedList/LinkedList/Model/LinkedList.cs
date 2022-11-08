@@ -65,7 +65,39 @@ namespace LinkedList.Model
                     current = current.Next;
                 }
             }
+            
         }
+
+        public void InsertAfter(T target, T data)
+        {
+            var item = new Item<T>(data);
+            if (Head != null)
+            {
+                if (Head.Data.Equals(target))
+                {
+                    item.Next = Head.Next.Next;
+                    Head.Next = item;
+                    return;
+                }
+                var current = Head.Next;
+                
+
+
+                while (current != null)
+                {
+                    if (current.Data.Equals(target))
+                    {
+                        item.Next = current.Next.Next;
+                        current.Next=item;
+                        return;
+                    }
+                    
+                    current = current.Next;
+                }
+            }
+            
+        }
+
 
         private void SetHeadAndTAil(Item<T> item)
         {
