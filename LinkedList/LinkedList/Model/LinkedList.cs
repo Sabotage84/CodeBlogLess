@@ -15,10 +15,7 @@ namespace LinkedList.Model
         public int Count { get; private set; }
         public LinkedList()
         {
-            Head = null;
-            Tail = null;
-            Count = 0;
-
+            Clear();
         }
         public LinkedList(T data)
         {
@@ -87,6 +84,21 @@ namespace LinkedList.Model
                 current = current.Next;
             }
             Console.WriteLine(res);
+        }
+
+        public void Clear()
+        {
+            Head = null;
+            Tail = null;
+            Count = 0;
+        }
+
+        public void AppendHead(T data)
+        {
+            var item = new Item<T>(data);
+            item.Next = Head;
+            Head = item;
+            Count++;
         }
 
         public IEnumerator<T> GetEnumerator()
