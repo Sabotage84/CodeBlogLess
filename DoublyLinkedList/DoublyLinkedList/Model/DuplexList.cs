@@ -27,5 +27,33 @@ namespace DoublyLinkedList.Model
             Count = 1;
         }
 
+        public void Add(T data)
+        {
+            var item = new DuplexItem<T>(data);
+            Tail.Next = item;
+            item.Previous = Tail;
+            Tail = item;
+            Count++;
+        }
+
+        public void Delete(T data)
+        {
+            var current = Head;
+
+            while (current!=null)
+            {
+
+                if (current.Data.Equals(data))
+                {
+                    current.Next.Previous = current.Previous;
+                    current.Previous.Next = current.Next;
+                    Count--;
+                    return;
+                }
+
+                current = current.Next;
+            }
+        }
+
     }
 }
