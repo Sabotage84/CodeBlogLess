@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DoublyLinkedList.Model
 {
-    public class DuplexList<T>
+    public class DuplexList<T>:IEnumerable<T>
     {
         public DuplexItem<T> Head {get; set;}
 
@@ -55,5 +56,20 @@ namespace DoublyLinkedList.Model
             }
         }
 
+         IEnumerator<T> IEnumerable<T>.GetEnumerator()
+        {
+            return (IEnumerator<T>)GetEnumerator();
+
+        }
+
+        public IEnumerator GetEnumerator()
+        {
+             var current = Head;
+            while (current!=null)
+            {
+                yield return current;
+                current = current.Next;
+            }
+        }
     }
 }
