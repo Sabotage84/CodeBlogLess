@@ -15,10 +15,7 @@ namespace DoublyLinkedList.Model
 
         public int Count { get; set; }
 
-        public DuplexList()
-        {
-
-        }
+       
 
         public DuplexList(T data)
         {
@@ -41,15 +38,30 @@ namespace DoublyLinkedList.Model
         {
             var current = Head;
 
+            if (current.Data.Equals(data))
+            {
+                Head = current.Next;
+                return;
+            }
+            current = current.Next;
             while (current!=null)
             {
 
                 if (current.Data.Equals(data))
                 {
-                    current.Next.Previous = current.Previous;
-                    current.Previous.Next = current.Next;
-                    Count--;
-                    return;
+                    if (current.Next != null)
+                    {
+                        current.Next.Previous = current.Previous;
+                        current.Previous.Next = current.Next;
+                        Count--;
+                        return;
+                    }
+                    else
+                    {
+                        current.Previous.Next = null;
+                        Count--;
+                        return;
+                    }
                 }
 
                 current = current.Next;
@@ -70,6 +82,17 @@ namespace DoublyLinkedList.Model
                 yield return current;
                 current = current.Next;
             }
+        }
+
+        public void Show()
+        {
+            var current = Head;
+            while (current!=null)
+            {
+                Console.Write(current.Data.ToString() + " ");
+                current = current.Next;
+            }
+            Console.WriteLine();
         }
     }
 }

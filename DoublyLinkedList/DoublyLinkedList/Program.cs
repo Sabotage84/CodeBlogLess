@@ -11,14 +11,21 @@ namespace DoublyLinkedList
     {
         static void Main(string[] args)
         {
-            var duplexList = new DuplexList<int>();
+            var duplexList = new DuplexList<int>(0);
             duplexList.Add(1);
             duplexList.Add(2);
             duplexList.Add(3);
             duplexList.Add(4);
             duplexList.Add(5);
+            duplexList.Show();
 
+            duplexList.Delete(0);
+            duplexList.Show();
 
+            duplexList.Delete(5);
+            duplexList.Show();
+
+            Console.ReadLine();
         }
     }
 }
