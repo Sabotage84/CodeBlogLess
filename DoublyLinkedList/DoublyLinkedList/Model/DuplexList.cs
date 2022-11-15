@@ -41,6 +41,7 @@ namespace DoublyLinkedList.Model
             if (current.Data.Equals(data))
             {
                 Head = current.Next;
+                Head.Previous = null;
                 return;
             }
             current = current.Next;

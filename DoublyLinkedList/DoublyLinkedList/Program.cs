@@ -25,6 +25,15 @@ namespace DoublyLinkedList
             duplexList.Delete(5);
             duplexList.Show();
 
+            duplexList.Delete(3);
+            duplexList.Show();
+
+
+            foreach (var item in duplexList)
+            {
+                Console.WriteLine(item);
+            }
+
             Console.ReadLine();
         }
     }
