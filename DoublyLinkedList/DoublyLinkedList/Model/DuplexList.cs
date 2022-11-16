@@ -15,7 +15,10 @@ namespace DoublyLinkedList.Model
 
         public int Count { get; set; }
 
-       
+        public DuplexList()
+        {
+
+        }
 
         public DuplexList(T data)
         {
@@ -28,10 +31,19 @@ namespace DoublyLinkedList.Model
         public void Add(T data)
         {
             var item = new DuplexItem<T>(data);
-            Tail.Next = item;
-            item.Previous = Tail;
-            Tail = item;
-            Count++;
+            if (Count == 0)
+            {
+                Head = item;
+                Tail = item;
+                Count = 1;
+            }
+            else
+            {
+                Tail.Next = item;
+                item.Previous = Tail;
+                Tail = item;
+                Count++;
+            }
         }
 
         public void Delete(T data)
@@ -54,12 +66,14 @@ namespace DoublyLinkedList.Model
                     {
                         current.Next.Previous = current.Previous;
                         current.Previous.Next = current.Next;
+                        
                         Count--;
                         return;
                     }
                     else
                     {
                         current.Previous.Next = null;
+                        Tail = current.Previous;
                         Count--;
                         return;
                     }
@@ -73,6 +87,20 @@ namespace DoublyLinkedList.Model
         {
             return (IEnumerator<T>)GetEnumerator();
 
+        }
+
+        public DuplexList<T> Reverse()
+        {
+            DuplexList<T> result = new DuplexList<T>();
+
+            var current = Tail;
+
+            while (current!=null)
+            {
+                result.Add(current.Data);
+                current = current.Previous;
+            }
+                        return result;
         }
 
         public IEnumerator GetEnumerator()

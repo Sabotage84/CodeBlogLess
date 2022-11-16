@@ -34,6 +34,11 @@ namespace DoublyLinkedList
                 Console.WriteLine(item);
             }
 
+            Console.WriteLine();
+
+            var reverse = duplexList.Reverse();
+            reverse.Show();
+
             Console.ReadLine();
         }
     }
