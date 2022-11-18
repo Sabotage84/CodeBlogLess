@@ -32,5 +32,39 @@ namespace SetCodeBlog
             }
             items.Add(item);
         }
+
+        public void Remove(T item)
+        {
+            items.Remove(item);
+        }
+
+        public EasySet<T> Union(EasySet<T> set)
+        {
+            //return this.Union(set);
+
+            EasySet<T> result= new EasySet<T>();
+
+            if (Count >= set.Count)
+            {
+                result.items.AddRange(items);
+
+                foreach (var item in set.items)
+                {
+                    result.Add(item);
+                }
+            }
+            else
+            {
+                result.items.AddRange(set.items);
+
+                foreach (var item in items)
+                {
+                    result.Add(item);
+                }
+            }
+
+            return result;
+        }
+
     }
 }
