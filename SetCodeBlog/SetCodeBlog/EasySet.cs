@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SetCodeBlog
 {
-    public class EasySet<T>
+    public class EasySet<T>: IEnumerable
     {
         private List<T> items = new List<T>();
 
@@ -66,5 +67,9 @@ namespace SetCodeBlog
             return result;
         }
 
+        public IEnumerator GetEnumerator()
+        {
+            return items.GetEnumerator();
+        }
     }
 }
