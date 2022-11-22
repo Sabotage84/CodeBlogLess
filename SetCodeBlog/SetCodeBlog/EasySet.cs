@@ -48,6 +48,8 @@ namespace SetCodeBlog
         {
             //return this.Union(set);
 
+            //return new EasySet<T>(items.Union(set.items));
+
             EasySet<T> result= new EasySet<T>();
 
             if (Count >= set.Count)
@@ -72,9 +74,37 @@ namespace SetCodeBlog
             return result;
         }
 
+        public EasySet<T> Intersection(EasySet<T> set)
+        {
+            var result = new EasySet<T>();
+
+            foreach (var item1 in items)
+            {
+                foreach (var item2 in set.items)
+                {
+                    if(item1.Equals(item2))
+                    {
+                        result.Add(item1);
+                        break;
+                    }
+                }
+            }
+
+            return result;
+        }
+
         public IEnumerator GetEnumerator()
         {
             return items.GetEnumerator();
+        }
+
+        public void Show()
+        {
+            foreach (var item in items)
+            {
+                Console.Write(item.ToString() + " ");
+            }
+            Console.WriteLine();
         }
     }
 }
