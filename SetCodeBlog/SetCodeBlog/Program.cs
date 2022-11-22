@@ -35,6 +35,21 @@ namespace SetCodeBlog
             set3 = set1.Intersection(set2);
             set3.Show();
 
+            EasySet<int> set4 = new EasySet<int>();
+            set4 = set1.Difference(set2);
+            set4.Show();
+
+            EasySet<int> set5 = new EasySet<int>();
+            set5.Add(2);
+            set5.Add(3);
+            set5.Add(9);
+            Console.WriteLine(set1.Subset(set5));
+
+            EasySet<int> set6 = new EasySet<int>();
+
+            set6 = set1.SymmetricDifference(set2);
+            set6.Show();
+
             Console.ReadLine();
         }
     }

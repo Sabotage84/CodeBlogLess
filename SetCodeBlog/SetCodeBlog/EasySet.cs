@@ -93,6 +93,50 @@ namespace SetCodeBlog
             return result;
         }
 
+        public EasySet<T> Difference(EasySet<T> set)
+        {
+            var result = new EasySet<T>(items);
+            foreach (var item in set.items)
+            {
+                result.Remove(item);
+            }
+            return result;
+        }
+
+        public bool Subset(EasySet<T> set)
+        {
+
+            foreach (var item1 in set.items)
+            {
+                var equals = false;
+                foreach (var item2 in items)
+                {
+                    if(item1.Equals(item2))
+                    {
+                        equals = true;
+                        break;
+                    }
+                }
+                if(!equals)
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+
+        public EasySet<T> SymmetricDifference(EasySet<T> set)
+        {
+            var res = new EasySet<T>();
+            var res1=set.Difference(this);
+            var res2 =this.Difference(set);
+            res = res1.Union(res2);
+            return res;
+
+
+        }
+
         public IEnumerator GetEnumerator()
         {
             return items.GetEnumerator();
