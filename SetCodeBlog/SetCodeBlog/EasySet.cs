@@ -22,6 +22,11 @@ namespace SetCodeBlog
             items.Add(item);
         }
 
+        public EasySet(IEnumerable<T> items)
+        {
+            this.items = items.ToList();
+        }
+
         public void Add(T item)
         {
             foreach (var i in items)
