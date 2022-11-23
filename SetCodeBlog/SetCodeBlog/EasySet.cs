@@ -128,6 +128,9 @@ namespace SetCodeBlog
 
         public EasySet<T> SymmetricDifference(EasySet<T> set)
         {
+
+            //return new EasySet<T>(items.Except(set.items).Union(set.items.Except(items)));
+
             var res = new EasySet<T>();
             var res1=set.Difference(this);
             var res2 =this.Difference(set);
