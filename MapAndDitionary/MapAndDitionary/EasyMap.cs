@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.InteropServices.ComTypes;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace MapAndDitionary
 {
-    internal class EasyMap<TKey, TValue>
+    internal class EasyMap<TKey, TValue>:IEnumerable
     {
         private List<Item<TKey, TValue>> Items= new List<Item<TKey, TValue>>();
         private List<TKey> Keys= new List<TKey>();
@@ -46,6 +47,11 @@ namespace MapAndDitionary
                 Items.Remove(Items.Single(i => i.Key.Equals(key)));
             }
             
+        }
+
+        public IEnumerator GetEnumerator()
+        {
+            return Items.GetEnumerator();
         }
     }
 }

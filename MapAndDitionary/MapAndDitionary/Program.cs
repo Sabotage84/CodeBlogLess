@@ -20,6 +20,22 @@ namespace MapAndDitionary
 
             Console.WriteLine(easyMap.Search(5));
 
+
+            foreach (var item in easyMap)
+            {
+                Console.WriteLine(item);
+            }
+
+            Console.WriteLine(easyMap.Search(7));
+
+            easyMap.Remove(3);
+
+            foreach (var item in easyMap)
+            {
+                Console.WriteLine(item);
+            }
+
+
             Console.ReadKey();
 
         }
