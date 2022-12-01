@@ -10,6 +10,18 @@ namespace MapAndDitionary
     {
         static void Main(string[] args)
         {
+            var easyMap = new EasyMap<int, string>();
+
+            easyMap.Add(new Item<int, string>(1, "Один"));
+            easyMap.Add(new Item<int, string>(2, "Два"));
+            easyMap.Add(new Item<int, string>(3, "Три"));
+            easyMap.Add(new Item<int, string>(4, "Четыре"));
+            easyMap.Add(new Item<int, string>(5, "Пять"));
+
+            Console.WriteLine(easyMap.Search(5));
+
+            Console.ReadKey();
+
         }
     }
 }
