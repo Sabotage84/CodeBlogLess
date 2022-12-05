@@ -18,6 +18,8 @@ namespace MapAndDitionary
             Map2.Add(new Item<int, string>(3, "Три"));
             Map2.Add(new Item<int, string>(4, "Четыре"));
             Map2.Add(new Item<int, string>(5, "Пять"));
+            Map2.Add(new Item<int, string>(101, "Сто один"));
+
 
             Map2.Show();
 
@@ -37,7 +39,7 @@ namespace MapAndDitionary
 
             Map2.Remove(6);
             Map2.Show();
-
+            Console.WriteLine(Map2.Search(101));
 
             Console.WriteLine("--------------------------------------------------------");
 

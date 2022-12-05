@@ -30,34 +30,36 @@ namespace MapAndDitionary
                 var placed = false;
                 for (var i = hash; i < size; i++)
                 {
-                    if (Items[i].Key.Equals(item.Key))
-                    {
-                        return;
-                    }
-
                     if (Items[i]==null)
                     {
                         Items[i]=item;
                         placed = true;
                         break;
                     }
+                    if (Items[i].Key.Equals(item.Key))
+                    {
+                        return;
+                    }
+
+                    
 
                 }
                 if (!placed)
                 {
                     for (var i = 0; i < hash; i++)
                     {
-                        if (Items[i].Key.Equals(item.Key))
-                        {
-                            return;
-                        }
-
                         if (Items[i] == null)
                         {
                             Items[i] = item;
                             placed = true;
                             break;
                         }
+                        if (Items[i].Key.Equals(item.Key))
+                        {
+                            return;
+                        }
+
+                        
 
                     }
                 }
@@ -96,23 +98,28 @@ namespace MapAndDitionary
                 var placed = false;
                 for (var i = hash; i < size; i++)
                 {
+                    if (Items[i] == null)
+                    {
+
+                        return;
+                    }
                     if (Items[i].Key.Equals(key))
                     {
                         Items[hash] = null;
                         return;
                     }
 
-                    if (Items[i] == null)
-                    {
-
-                        return;
-                    }
+                    
 
                 }
                 if (!placed)
                 {
                     for (var i = 0; i < hash; i++)
                     {
+                        if (Items[i] == null)
+                        {
+                            return;
+                        }
                         if (Items[i].Key.Equals(key))
                         {
 
@@ -120,10 +127,7 @@ namespace MapAndDitionary
                             return;
                         }
 
-                        if (Items[i] == null)
-                        {
-                            return;
-                        }
+                        
 
                     }
                 }
@@ -133,44 +137,88 @@ namespace MapAndDitionary
         public TValue Search(TKey key)
         {
             var hash = GetHash(key);
-            if (Items[hash].Key.Equals(key))
+            if (Items[hash] != null)
             {
-                return Items[hash].Value;
+                if (Items[hash].Key.Equals(key))
+                {
+                    return Items[hash].Value;
+                }
+                else
+                {
+                    var placed = false;
+                    for (var i = hash; i < size; i++)
+                    {
+                        if (Items[i] == null)
+                        {
+                            return default(TValue);
+                        }
+                        if (Items[i].Key.Equals(key))
+                        {
+                            return Items[i].Value;
+                        }
+
+
+
+                    }
+                    if (!placed)
+                    {
+                        for (var i = 0; i < hash; i++)
+                        {
+                            if (Items[i] == null)
+                            {
+                                return default(TValue);
+                            }
+                            if (Items[i].Key.Equals(key))
+                            {
+                                return Items[hash].Value;
+                            }
+
+
+
+                        }
+                    }
+
+                    
+                }
             }
             else
             {
                 var placed = false;
                 for (var i = hash; i < size; i++)
                 {
-                    if (Items[i].Key.Equals(key))
-                    {
-                        return Items[hash].Value;
-                    }
-
                     if (Items[i] == null)
                     {
                         return default(TValue);
                     }
+                    if (Items[i].Key.Equals(key))
+                    {
+                        return Items[i].Value;
+                    }
+
+
 
                 }
                 if (!placed)
                 {
                     for (var i = 0; i < hash; i++)
                     {
-                        if (Items[i].Key.Equals(key))
-                        {
-                            return Items[hash].Value;
-                        }
-
                         if (Items[i] == null)
                         {
                             return default(TValue);
                         }
+                        if (Items[i].Key.Equals(key))
+                        {
+                            return Items[i].Value;
+                        }
+
+
 
                     }
-                } 
-                return default(TValue);
+                }
             }
+            
+            
+            return default(TValue);
         }
 
         private int GetHash(TKey key)
