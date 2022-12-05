@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MapAndDitionary
 {
-    internal class Dict<TKey, TValue>
+    internal class Dict<TKey, TValue>: IEnumerable
     {
         private int size = 100;
         private Item<TKey, TValue>[] Items ;
@@ -68,9 +69,24 @@ namespace MapAndDitionary
 
         }
 
+        public IEnumerator GetEnumerator()
+        {
+            foreach (var item in Items)
+            {
+                if(item!=null)
+                {
+                    yield return item;
+                }
+            }
+        }
+
         public void Remove(TKey key)
         {
             var hash = GetHash(key);
+
+            if (Items[hash] == null)
+                return;
+
             if (Items[hash].Key.Equals(key))
             {
                 Items[hash] = null;
@@ -162,6 +178,17 @@ namespace MapAndDitionary
             return key.GetHashCode()%size;
         }
 
+        public void Show()
+        {
+            foreach (var item in Items)
+            {
+                if (item != null)
+                {
+                    Console.WriteLine(item.Value+" ");
+                }
+            }
+            Console.WriteLine();
+        }
 
     }
 }
