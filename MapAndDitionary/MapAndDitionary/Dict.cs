@@ -10,7 +10,8 @@ namespace MapAndDitionary
     internal class Dict<TKey, TValue>: IEnumerable
     {
         private int size = 100;
-        private Item<TKey, TValue>[] Items ;
+        private Item<TKey, TValue>[] Items;
+        private List<TKey> Keys = new List<TKey>();
 
         public Dict()
         {
@@ -21,8 +22,14 @@ namespace MapAndDitionary
         {
             var hash = GetHash(item.Key);
 
+            if(Keys.Contains(item.Key))
+            {
+                return;
+            }
+
             if (Items[hash]==null) 
             {
+                Keys.Add(item.Key);
                 Items[hash] = item;
             }
             else
@@ -33,6 +40,7 @@ namespace MapAndDitionary
                     if (Items[i]==null)
                     {
                         Items[i]=item;
+                        Keys.Add(item.Key);
                         placed = true;
                         break;
                     }
@@ -52,6 +60,7 @@ namespace MapAndDitionary
                         {
                             Items[i] = item;
                             placed = true;
+                            Keys.Add(item.Key);
                             break;
                         }
                         if (Items[i].Key.Equals(item.Key))
@@ -85,139 +94,62 @@ namespace MapAndDitionary
         public void Remove(TKey key)
         {
             var hash = GetHash(key);
-
-            if (Items[hash] == null)
-                return;
-
-            if (Items[hash].Key.Equals(key))
+            if (!Keys.Contains(key))
             {
+                return;
+            }
+            
+
+            if (Items[hash] != null && Items[hash].Key.Equals(key))
+            {
+                Keys.Remove(key);
                 Items[hash] = null;
+                return;
             }
             else
             {
-                var placed = false;
-                for (var i = hash; i < size; i++)
+                for (int i = 0; i < size; i++)
                 {
-                    if (Items[i] == null)
+                    if (Items[i] != null && Items[i].Key.Equals(key))
                     {
-
+                        Keys.Remove(key);
+                        Items[i] = null;
                         return;
                     }
-                    if (Items[i].Key.Equals(key))
-                    {
-                        Items[hash] = null;
-                        return;
-                    }
-
-                    
-
                 }
-                if (!placed)
-                {
-                    for (var i = 0; i < hash; i++)
-                    {
-                        if (Items[i] == null)
-                        {
-                            return;
-                        }
-                        if (Items[i].Key.Equals(key))
-                        {
-
-                            Items[hash] = null;
-                            return;
-                        }
-
-                        
-
-                    }
-                }
+               
             }
         }
 
-        public TValue Search(TKey key)
+        public TValue Search(TKey key)//не работает как надо
+            //нужно добавить список ключей и проверять его
         {
             var hash = GetHash(key);
-            if (Items[hash] != null)
+            if (!Keys.Contains(key))
             {
-                if (Items[hash].Key.Equals(key))
-                {
-                    return Items[hash].Value;
-                }
-                else
-                {
-                    var placed = false;
-                    for (var i = hash; i < size; i++)
-                    {
-                        if (Items[i] == null)
-                        {
-                            return default(TValue);
-                        }
-                        if (Items[i].Key.Equals(key))
-                        {
-                            return Items[i].Value;
-                        }
+                return default(TValue); ;
+            }
 
 
-
-                    }
-                    if (!placed)
-                    {
-                        for (var i = 0; i < hash; i++)
-                        {
-                            if (Items[i] == null)
-                            {
-                                return default(TValue);
-                            }
-                            if (Items[i].Key.Equals(key))
-                            {
-                                return Items[hash].Value;
-                            }
-
-
-
-                        }
-                    }
-
-                    
-                }
+            if (Items[hash]!=null && Items[hash].Key.Equals(key))
+            {
+                Keys.Remove(key);
+                return Items[hash].Value;
+               
             }
             else
             {
-                var placed = false;
-                for (var i = hash; i < size; i++)
+                for (int i = 0; i < size; i++)
                 {
-                    if (Items[i] == null)
+                    if (Items[i] != null && Items[i].Key.Equals(key))
                     {
-                        return default(TValue);
-                    }
-                    if (Items[i].Key.Equals(key))
-                    {
+                        Keys.Remove(key);
                         return Items[i].Value;
                     }
-
-
-
                 }
-                if (!placed)
-                {
-                    for (var i = 0; i < hash; i++)
-                    {
-                        if (Items[i] == null)
-                        {
-                            return default(TValue);
-                        }
-                        if (Items[i].Key.Equals(key))
-                        {
-                            return Items[i].Value;
-                        }
 
-
-
-                    }
-                }
             }
-            
-            
+
             return default(TValue);
         }
 
