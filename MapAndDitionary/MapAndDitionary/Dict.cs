@@ -121,8 +121,7 @@ namespace MapAndDitionary
             }
         }
 
-        public TValue Search(TKey key)//не работает как надо
-            //нужно добавить список ключей и проверять его
+        public TValue Search(TKey key)//работает но как-то криво
         {
             var hash = GetHash(key);
             if (!Keys.Contains(key))
