@@ -6,9 +6,7 @@ using System.Threading.Tasks;
 
 namespace QueueDeque.Model
 {
-    internal class EseayQueue
+    internal class ArrayQueue
     {
-
-
     }
 }
