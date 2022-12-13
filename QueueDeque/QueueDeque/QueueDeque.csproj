@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="Model\ArrayQueue.cs" />
     <Compile Include="Model\EseayQueue.cs" />
+    <Compile Include="Model\Item.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
