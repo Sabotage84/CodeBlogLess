@@ -30,7 +30,7 @@ namespace QueueDeque.Model
             items.Insert(0, data);
         }
 
-        public T Dequeue(T data)
+        public T Dequeue()
         {
             T res = Head;
             items.Remove(Head);

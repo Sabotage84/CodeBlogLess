@@ -50,7 +50,7 @@ namespace QueueDeque.Model
             }
         }
 
-        public T Dequeue(T data)
+        public T Dequeue()
         {
             T res = Head;
             Count--;
