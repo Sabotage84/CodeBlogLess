@@ -58,7 +58,19 @@ namespace QueueDeque.Model
             return Head;
         }
 
+        public void Show()
+        {
+            string res = "";
+            
+            
+            foreach(var item in items)
+            {
+                res += item.ToString() + " ";
+               
+            }
+            Console.WriteLine(res);
 
+        }
     }
 
 }

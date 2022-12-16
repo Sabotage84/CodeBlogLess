@@ -33,6 +33,32 @@ namespace QueueDeque
             Console.WriteLine(q.Dequeue());
             q.Show();
 
+            Console.WriteLine("______________________________________");
+
+            var dq = new DuplexLinkedDeque<int>();
+            
+            dq.Show();
+
+            dq.PushFront(1);
+            dq.PushFront(2);
+            dq.PushFront(3);
+            dq.PushFront(4);
+            dq.Show();
+            dq.PushBack(5);
+            dq.PushBack(6);
+            dq.PushFront(7);
+            dq.PushFront(8);
+            dq.Show();
+
+            dq.PopBack();
+            dq.Show();
+
+            dq.PopFront();
+            dq.Show();
+            dq.PopFront(); dq.PopFront(); dq.PopFront(); dq.PopFront(); dq.PopFront(); dq.PopFront();
+
+
+
             Console.ReadLine();
 
         }

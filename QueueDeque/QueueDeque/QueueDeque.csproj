@@ -44,6 +44,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Model\ArrayQueue.cs" />
+    <Compile Include="Model\DuplexItem.cs" />
+    <Compile Include="Model\DuplexLinkedDeque.cs" />
     <Compile Include="Model\EasyDeue.cs" />
     <Compile Include="Model\EseayQueue.cs" />
     <Compile Include="Model\Item.cs" />
