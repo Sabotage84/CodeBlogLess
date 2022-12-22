@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 namespace BinarySearchTree
 {
     internal class Node<T>
+        where T:IComparable
     {
+        public T Data { get; set; }
     }
 }
