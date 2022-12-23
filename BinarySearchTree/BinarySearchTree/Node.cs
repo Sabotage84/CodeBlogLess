@@ -9,6 +9,16 @@ namespace BinarySearchTree
     internal class Node<T>
         where T:IComparable
     {
-        public T Data { get; set; }
+        public T Data { get; private set; }
+
+        public Node<T> Left { get; private set;}
+
+        public Node<T> Right { get; private set; }
+
+        public Node(T data)
+        {
+            Data= data;
+        }
+
     }
 }
