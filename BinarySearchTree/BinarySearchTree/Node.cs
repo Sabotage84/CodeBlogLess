@@ -20,5 +20,7 @@ namespace BinarySearchTree
             Data= data;
         }
 
+        
+
     }
 }

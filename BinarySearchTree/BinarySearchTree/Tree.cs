@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace BinarySearchTree
 {
-    internal class Tree<T>
+    internal class Tree<T> where T : IComparable
     {
+        public Node<T> Root { get; private set; }
+
+        public int Count { get; private set; }
+        public Tree(T data) { }
     }
 }
