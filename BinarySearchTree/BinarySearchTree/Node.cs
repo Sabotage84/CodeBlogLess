@@ -20,7 +20,13 @@ namespace BinarySearchTree
             Data= data;
         }
 
+        public Node(T data, Node<T> left, Node<T> right)
+        {
         
+            Data= data;
+            Left= left;
+            Right= right;
+        }
 
     }
 }
