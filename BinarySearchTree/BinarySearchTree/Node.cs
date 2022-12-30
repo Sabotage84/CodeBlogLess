@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BinarySearchTree
 {
-    internal class Node<T>
+    internal class Node<T> : IComparable
         where T:IComparable
     {
         public T Data { get; private set; }
@@ -28,5 +28,9 @@ namespace BinarySearchTree
             Right= right;
         }
 
+        public int CompareTo(object obj)
+        {
+            return Data.CompareTo(obj);
+        }
     }
 }
