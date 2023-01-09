@@ -38,6 +38,7 @@ namespace BinarySearchTree
             else
             {
                 throw new ArgumentException("Не соответствие типов!");
+
             }
 
         }
