@@ -30,7 +30,21 @@ namespace BinarySearchTree
 
         public int CompareTo(object obj)
         {
-            return Data.CompareTo(obj);
+            if (obj == null) return -1;
+            if (obj is Node<T>)
+            {
+                return Data.CompareTo(obj);
+            }
+            else
+            {
+                throw new ArgumentException("Не соответствие типов!");
+            }
+
+        }
+
+        public int CompareTo(T other)
+        {
+            return Data.CompareTo(other);
         }
     }
 }
