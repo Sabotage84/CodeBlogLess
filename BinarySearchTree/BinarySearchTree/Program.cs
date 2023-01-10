@@ -20,6 +20,23 @@ namespace BinarySearchTree
             tree.Add(1);
             tree.Add(6);
             tree.Add(9);
+
+            List<int> test= tree.Preorder();
+
+            List<int> test2 = tree.Postorder();
+
+            foreach (var item in test)
+            {
+                Console.WriteLine(item);
+            }
+
+            foreach (var item in test2)
+            {
+                Console.WriteLine(item);
+            }
+
+
+            Console.ReadLine();
         }
     }
 }
