@@ -12,5 +12,32 @@ namespace BinarySearchTree
 
         public int Count { get; private set; }
         public Tree(T data) { }
+
+        public void Add(T data) 
+        {
+            var node = new Node<T>(data);
+
+            if (Root==null)
+            {
+                Root= node;
+                Count=1;
+                return;
+            }
+
+
+            var current = Root;
+
+            if (current == null)
+            {
+            
+                Count++;
+            }
+            else
+            {
+                
+            }
+
+      
+        }
     }
 }

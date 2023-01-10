@@ -31,9 +31,9 @@ namespace BinarySearchTree
         public int CompareTo(object obj)
         {
             if (obj == null) return -1;
-            if (obj is Node<T>)
+            if (obj is Node<T> item)
             {
-                return Data.CompareTo(obj);
+                return Data.CompareTo(item);
             }
             else
             {
