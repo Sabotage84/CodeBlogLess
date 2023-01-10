@@ -11,31 +11,20 @@ namespace BinarySearchTree
         public Node<T> Root { get; private set; }
 
         public int Count { get; private set; }
-        public Tree(T data) { }
+        public Tree() { }
 
-        public void Add(T data) 
-        {
-            var node = new Node<T>(data);
-
+        public void Add(T data)
+        { 
             if (Root==null)
             {
-                Root= node;
+                Root=  new Node<T>(data);
                 Count=1;
                 return;
             }
 
 
-            var current = Root;
-
-            if (current == null)
-            {
-            
-                Count++;
-            }
-            else
-            {
-                
-            }
+            Root.Add(data);
+            Count++;
 
       
         }
