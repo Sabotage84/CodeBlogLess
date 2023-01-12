@@ -8,15 +8,24 @@ namespace TrieCB
 {
     internal class Node<T>
     {
-        public string Key { get; set; }
+        public char Symbol { get; set; }
 
         public T Data { get; set; }
 
         public bool IsWord { get; set; }
+
+        public string Prefix { get; set; }
         
-        public Dictionary<string, Node<T>> SubNodes { get; set; }
+        public Dictionary<char, Node<T>> SubNodes { get; set; }
+
+        
 
         public Node(T data)
+        {
+            Data= data;
+        }
+        
+        public Node(string key, T data)
         {
             Data= data;
         }
@@ -24,6 +33,16 @@ namespace TrieCB
         public override string ToString()
         {
             return Data.ToString();
+        }
+
+        public Node<T>  TryFind(char symbol)
+        {
+            if(SubNodes.TryGetValue(symbol, out Node<T> value))
+            {
+                return value;
+
+            }
+            return null;
         }
 
         public override bool Equals(object obj) 
