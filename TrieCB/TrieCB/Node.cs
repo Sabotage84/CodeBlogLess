@@ -14,7 +14,17 @@ namespace TrieCB
 
         public bool IsWord { get; set; }
         
+        public Dictionary<string, Node<T>> SubNodes { get; set; }
 
+        public Node(T data)
+        {
+            Data= data;
+        }
+
+        public override string ToString()
+        {
+            return Data.ToString();
+        }
 
     }
 }
