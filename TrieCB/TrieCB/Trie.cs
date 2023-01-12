@@ -14,12 +14,40 @@ namespace TrieCB
 
         public Trie(T data)
         {
-            root= new Node<T>("", data);
+            root= new Node<T>('\0', data, "");
             Count=1;
         }
 
-        public void Add (string key, T data)
+        public void Add(string key, T data)
         {
+            AddNode(key, data, root);
+        }
+
+        private void AddNode(string key, T data, Node<T> node)
+        {
+            if (string.IsNullOrEmpty(key))
+            {
+                if (!node.IsWord)
+                {
+                    node.Data = data;
+                    node.IsWord = true;
+                }
+            }
+            else
+            {
+                var symbol = key[0];
+                var subnode = node.TryFind(symbol);
+                if (subnode != null)
+                {
+                    AddNode(key.Substring(1), data, subnode);
+                }
+                else
+                {
+                    var newNode = new Node<T>(key[0], data, node.Prefix + key[0]);
+                    node.SubNodes.Add(key[0], newNode);
+                    AddNode(key.Substring(1), data, newNode);
+                }
+            }
 
         }
 

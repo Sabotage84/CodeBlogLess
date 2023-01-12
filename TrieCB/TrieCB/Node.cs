@@ -18,16 +18,15 @@ namespace TrieCB
         
         public Dictionary<char, Node<T>> SubNodes { get; set; }
 
-        
 
-        public Node(T data)
+
+
+        public Node(char symbol, T data, string prefix)
         {
-            Data= data;
-        }
-        
-        public Node(string key, T data)
-        {
-            Data= data;
+            Symbol = symbol;
+            Data = data;
+            SubNodes = new Dictionary<char, Node<T>>();
+            Prefix = prefix;
         }
 
         public override string ToString()
