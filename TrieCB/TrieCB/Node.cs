@@ -26,5 +26,17 @@ namespace TrieCB
             return Data.ToString();
         }
 
+        public override bool Equals(object obj) 
+        {
+            if (obj is Node<T> item) 
+            {
+                return Data.Equals(item.Data);
+            }
+            else
+            {
+                return false;
+            }
+        }
+
     }
 }
