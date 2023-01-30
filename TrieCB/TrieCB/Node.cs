@@ -21,12 +21,12 @@ namespace TrieCB
 
 
 
-        public Node(char symbol, T data, string prefix)
+        public Node(char symbol, T data)
         {
             Symbol = symbol;
             Data = data;
             SubNodes = new Dictionary<char, Node<T>>();
-            Prefix = prefix;
+            //Prefix = prefix;
         }
 
         public override string ToString()
