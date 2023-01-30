@@ -53,13 +53,57 @@ namespace TrieCB
 
         public void Remove (string key) 
         {
-            
+            RemoveNode(key, root);
         }
 
-
-        public T Search(string key)
+        private void RemoveNode(string key, Node<T> node)
         {
-            throw new Exception();
+            if(string.IsNullOrEmpty(key))
+            {
+                if(node.IsWord)
+                {
+                    node.IsWord= false;
+                }
+            }
+            else
+            {
+                var subnode = node.TryFind(key[0]);
+                if(subnode!=null)
+                {
+                    RemoveNode(key.Substring(1), subnode);  
+                }
+            }
         }
+
+
+        public bool TrySearch(string key, out T value)
+        {
+            return SearchNode(key, root, out value);
+        }
+
+        private bool SearchNode(string key, Node<T> node, out T value)
+        {
+            value = default(T);
+            var result = false;
+            if (string.IsNullOrEmpty(key))
+            {
+                if (node.IsWord)
+                {
+                    value = node.Data;
+                    result = true;
+                }
+            }
+            else
+            {
+                var subnode = node.TryFind(key[0]);
+                if (subnode != null)
+                {
+                    result=SearchNode(key.Substring(1), subnode, out value);
+                }
+                
+            }
+            return result;
+        }
+
     }
 }
