@@ -14,7 +14,7 @@ namespace TrieCB
 
         public Trie()
         {
-            root= new Node<T>('\0',default(T));
+            root= new Node<T>('\0',default(T), "");
             Count=1;
         }
 
@@ -43,7 +43,7 @@ namespace TrieCB
                 }
                 else
                 {
-                    var newNode = new Node<T>(key[0], data);//, node.Prefix + key[0]);
+                    var newNode = new Node<T>(key[0], data, node.Prefix + key[0]);
                     node.SubNodes.Add(key[0], newNode);
                     AddNode(key.Substring(1), data, newNode);
                 }

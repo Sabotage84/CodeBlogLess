@@ -21,17 +21,17 @@ namespace TrieCB
 
 
 
-        public Node(char symbol, T data)
+        public Node(char symbol, T data, string prefix)
         {
             Symbol = symbol;
             Data = data;
             SubNodes = new Dictionary<char, Node<T>>();
-            //Prefix = prefix;
+            Prefix = prefix;
         }
 
         public override string ToString()
         {
-            return Data.ToString();
+            return $"{Data} [{SubNodes.Count}] ({Prefix})";
         }
 
         public Node<T>  TryFind(char symbol)
