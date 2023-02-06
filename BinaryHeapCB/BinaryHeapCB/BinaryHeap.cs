@@ -11,7 +11,7 @@ namespace BinaryHeapCB
         private List<int> items= new List<int>();
         public int Count { get { return items.Count; } }
 
-        public int GetMax()
+        public int? Peek()
         {
             if (Count > 0) 
             { 
@@ -24,23 +24,77 @@ namespace BinaryHeapCB
             }
         }
 
-        public void Add(int item)
+        public void Add (int item)
         {
             items.Add(item);
 
-            var currentIndex = Count-1;
-            var parentIndex = (currentIndex - 1) / 2;
+            var currentIndex = Count - 1;
+            var parentIndex = GetParentIndex(currentIndex);
 
-            while (currentIndex>0 && items[parentIndex] < items[currentIndex])
+            while (currentIndex > 0 && items[parentIndex] < items[currentIndex])
             {
-                var temp = items[currentIndex];
-                items[currentIndex] = items[parentIndex];
-                items[parentIndex] = temp;
+                Swap(currentIndex, parentIndex);
 
                 currentIndex = parentIndex;
-                parentIndex = (currentIndex - 1) / 2;
+                parentIndex = GetParentIndex(currentIndex);
             }
 
+        }
+
+        public int GetMax()
+        {
+            var result = items[0];
+
+            items[0] = items[Count - 1];
+            items.RemoveAt(Count - 1);
+            Sort(0);
+            return result;
+        }
+
+        private void Sort(int currentIndex)
+        {
+            
+            int leftIndex;
+            int rightIndex;
+            int maxIndex;
+             maxIndex = currentIndex;
+            while (currentIndex<Count)
+            {
+                
+                leftIndex = 2 * currentIndex + 1;
+                rightIndex = 2 * currentIndex + 2;
+
+                if (items[leftIndex] > items[maxIndex])
+                {
+                    maxIndex= leftIndex;
+                }
+                if (items[rightIndex] > items[maxIndex])
+                {
+                    maxIndex = rightIndex;
+                }
+
+                if(maxIndex==currentIndex)
+                {
+                    break;
+                }
+
+                Swap(currentIndex, maxIndex);
+                currentIndex= maxIndex;
+            }
+
+
+        }
+
+        private void Swap(int currentIndex, int parentIndex)
+        {
+            var temp = items[currentIndex];
+            items[currentIndex] = items[parentIndex];
+            items[parentIndex] = temp;
+        }
+
+        private static int GetParentIndex(int currentIndex)
+        {
+            return (currentIndex - 1) / 2;
         }
     }
 }
