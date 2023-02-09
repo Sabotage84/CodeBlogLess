@@ -11,21 +11,28 @@ namespace BinaryHeapCB
         static void Main(string[] args)
         {
             var heap = new BinaryHeap();
-            heap.Add(20);
-            heap.Add(11);
-            heap.Add(17);
-            heap.Add(7);
-            heap.Add(4);
-            heap.Add(13);
-            heap.Add(15);
-            heap.Add(14);
+            var rnd = new Random();
+            var items = new List<int>();
 
-            while (heap.Count>0)
+            for (int i = 0; i < 100; i++)
             {
-                Console.WriteLine(heap.GetMax());
-
+                items.Add(rnd.Next(100,200));
             }
-          
+
+            heap=new BinaryHeap(items);
+
+            for (int i = 0; i < 50; i++)
+            {
+                heap.Add(rnd.Next(100,200));
+            }
+
+            //Console.WriteLine(heap.Check());
+
+            foreach (var item in heap)
+            {
+                Console.WriteLine(item);
+            }
+            
             Console.ReadLine();
         }
     }

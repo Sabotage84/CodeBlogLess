@@ -1,12 +1,14 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Remoting.Metadata.W3cXsd2001;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace BinaryHeapCB
 {
-    internal class BinaryHeap
+    internal class BinaryHeap : IEnumerable
     {
         private List<int> items= new List<int>();
         public int Count { get { return items.Count; } }
@@ -22,6 +24,20 @@ namespace BinaryHeapCB
             {
                 return default(int);
             }
+        }
+        public BinaryHeap()
+        {
+
+        }
+
+        public BinaryHeap(List<int> items)
+        {
+            this.items.AddRange(items);
+            for (int i = Count; i >=0; i--)
+            {
+                Sort(i);
+            }
+            
         }
 
         public void Add (int item)
@@ -56,8 +72,7 @@ namespace BinaryHeapCB
             
             int leftIndex;
             int rightIndex;
-            int maxIndex;
-             maxIndex = currentIndex;
+            int maxIndex= currentIndex;
             while (currentIndex<Count)
             {
                 
@@ -95,6 +110,28 @@ namespace BinaryHeapCB
         private static int GetParentIndex(int currentIndex)
         {
             return (currentIndex - 1) / 2;
+        }
+
+        public IEnumerator GetEnumerator()
+        {
+            while (Count>0)
+            {
+                yield return GetMax();
+            }
+        }
+
+        public bool Check()
+        {
+            var res = true;
+            var max = Peek();
+            foreach (var item in this)
+            {
+                var cur = GetMax();
+                if (max < cur)
+                    return false;
+                max= cur;
+            }
+            return res;
         }
     }
 }
