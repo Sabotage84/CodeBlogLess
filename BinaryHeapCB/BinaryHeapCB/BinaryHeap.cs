@@ -64,11 +64,11 @@ namespace BinaryHeapCB
                 leftIndex = 2 * currentIndex + 1;
                 rightIndex = 2 * currentIndex + 2;
 
-                if (items[leftIndex] > items[maxIndex])
+                if (leftIndex<Count && items[leftIndex] > items[maxIndex])
                 {
                     maxIndex= leftIndex;
                 }
-                if (items[rightIndex] > items[maxIndex])
+                if (rightIndex<Count && items[rightIndex] > items[maxIndex])
                 {
                     maxIndex = rightIndex;
                 }
