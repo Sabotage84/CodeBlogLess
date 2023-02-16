@@ -10,6 +10,13 @@ namespace Graph
     {
         public int Number { get; set; }
 
+        public Vertex(int number)
+        {
+            Number = number;
+        }
+
+        public bool Oriented { get; set; }
+
         public override string ToString()
         {
             return Number.ToString();
