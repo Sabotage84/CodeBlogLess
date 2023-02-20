@@ -31,8 +31,8 @@ namespace Graph
 
             foreach (var item in Edges)
             {
-                var row = item.From.Number;
-                var col = item.To.Number;
+                var row = item.From.Number-1;
+                var col = item.To.Number-1;
 
                 matrix[row, col] = item.Weight;
                 matrix[col, row] = item.Weight;
