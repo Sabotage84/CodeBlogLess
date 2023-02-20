@@ -70,5 +70,57 @@ namespace Graph
                 Console.WriteLine();
             }
         }
+
+        public List<Vertex> GetVertexLists(Vertex vertex)
+        {
+            var result = new List<Vertex>();
+
+            foreach (var item in Edges)
+            {
+                if (item.From == vertex)
+                    result.Add(item.To);
+            }
+
+            return result;
+        }
+
+        public void ShowVertexLists()
+        {
+            foreach (var v in Vertexes)
+            {
+                var lst = GetVertexLists(v);
+                Console.Write($"Vertex {v.Number} has connection to: ");
+                foreach (var item in lst)
+                {
+                    Console.Write(item + " ");
+                }
+                Console.WriteLine();
+            }
+        }
+
+        public bool Wave(Vertex start, Vertex finish)
+        {
+            //var result = new List<Vertex>();
+            var list = new List<Vertex>
+            {
+                start
+            };
+            for (int i = 0; i < list.Count; i++)
+            {
+                var vertex = list[i];
+                foreach (var item in GetVertexLists(vertex))
+                {
+                    if (!list.Contains(item))
+                    {
+                        item.Visited = true;
+                        list.Add(item);
+                    }
+                }
+            
+            }
+
+            return list.Contains(finish);
+        }
+
     }
 }

@@ -39,6 +39,13 @@ namespace Graph
 
             graph.ShowMatrix();
 
+            graph.ShowVertexLists();
+
+            Console.WriteLine( graph.Wave(v1, v5));
+            Console.WriteLine( graph.Wave(v1, v7));
+            Console.WriteLine( graph.Wave(v4, v3));
+
+
             Console.ReadKey();
             
         }
