@@ -44,6 +44,8 @@ namespace Graph
             Console.WriteLine( graph.Wave(v1, v5));
             Console.WriteLine( graph.Wave(v1, v7));
             Console.WriteLine( graph.Wave(v4, v3));
+            Console.WriteLine( graph.Wave(v1, v5));
+            Console.WriteLine( graph.Wave(v1, v6));
 
 
             Console.ReadKey();
