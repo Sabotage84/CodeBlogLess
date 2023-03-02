@@ -10,6 +10,8 @@ namespace CodeBlogFit.CMD
     {
         static void Main(string[] args)
         {
+
+            Console.WriteLine("TEST");
         }
     }
 }
