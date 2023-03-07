@@ -12,6 +12,10 @@ namespace CodeBlogFit.BL.Model
 
         public Gender(string name) 
         {
+            if (string.IsNullOrEmpty(name))
+            {
+                throw new ArgumentNullException("Имя пола не может быть пустым или null", nameof(name));
+            }
             Name = name;
         }
     }
