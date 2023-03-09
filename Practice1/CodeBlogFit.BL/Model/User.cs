@@ -8,5 +8,8 @@ namespace CodeBlogFit.BL.Model
 {
     internal class User
     {
+        public string Name { get; }
+
+        public Gender Gender { get; }
     }
 }
