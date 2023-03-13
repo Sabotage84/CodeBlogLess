@@ -6,10 +6,21 @@ using System.Threading.Tasks;
 
 namespace CodeBlogFit.BL.Model
 {
+    /// <summary>
+    /// Пол.
+    /// </summary>
     internal class Gender
     {
+        /// <summary>
+        /// Название.
+        /// </summary>
         public string Name { get; }
 
+        /// <summary>
+        /// Создать новый пол.
+        /// </summary>
+        /// <param name="name">Имя пола.</param>
+        /// <exception cref="ArgumentNullException"></exception>
         public Gender(string name) 
         {
             if (string.IsNullOrEmpty(name))
