@@ -21,6 +21,9 @@ namespace CodeBlogFit.BL.Model
 
         public User(string name, Gender gender, DateTime birthDate, double weight, double height)
         {
+            if(string.IsNullOrEmpty(name)) throw new ArgumentNullException("name");
+            if (gender == null) throw new ArgumentNullException("gender");
+            if (birthDate == null) throw new ArgumentNullException("bithDate");
             Name = name;
             Gender = gender;
             BirthDate = birthDate;
