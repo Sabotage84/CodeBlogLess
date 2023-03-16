@@ -23,7 +23,7 @@ namespace CodeBlogFit.BL.Model
         {
             if(string.IsNullOrEmpty(name)) throw new ArgumentNullException("name");
             if (gender == null) throw new ArgumentNullException("gender");
-            if (birthDate == null) throw new ArgumentNullException("bithDate");
+            if (birthDate == null || birthDate<DateTime.Parse("01.01.1900")) throw new ArgumentNullException("bithDate");
             Name = name;
             Gender = gender;
             BirthDate = birthDate;
