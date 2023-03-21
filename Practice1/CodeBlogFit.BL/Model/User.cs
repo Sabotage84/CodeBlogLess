@@ -37,7 +37,16 @@ namespace CodeBlogFit.BL.Model
             if (weight<=0)
             {
                 throw new ArgumentNullException("weght");
+
             }
+
+            if (height <= 0)
+            {
+                throw new ArgumentNullException("height");
+
+            }
+
+
             Name = name;
             Gender = gender;
             BirthDate = birthDate;
