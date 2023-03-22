@@ -29,7 +29,7 @@ namespace CodeBlogFit.BL.Model
             { 
                 throw new ArgumentNullException("gender"); 
             }
-            if (birthDate == null || birthDate < DateTime.Parse("01.01.1900")) 
+            if (birthDate == null || birthDate < DateTime.Parse("01.01.1900") || birthDate > DateTime.Now) 
             { 
                 throw new ArgumentNullException("bithDate"); 
             }
