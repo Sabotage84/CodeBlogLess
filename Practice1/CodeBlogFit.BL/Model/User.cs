@@ -9,18 +9,45 @@ namespace CodeBlogFit.BL.Model
 {
     internal class User
     {
+        #region Свойства
+        /// <summary>
+        /// Имя юзера
+        /// </summary>
         public string Name { get; }
 
+        /// <summary>
+        /// Пол.
+        /// </summary>
         public Gender Gender { get; }
 
+        /// <summary>
+        /// Дата рождения
+        /// </summary>
         public DateTime BirthDate { get; } 
 
+        /// <summary>
+        /// Вес.
+        /// </summary>
         public double Weight { get; set; }
 
+        /// <summary>
+        /// Рост
+        /// </summary>
         public double Height { get; set; }
+        #endregion
 
+        /// <summary>
+        /// Создание нового юзера
+        /// </summary>
+        /// <param name="name">Имя</param>
+        /// <param name="gender">Пол</param>
+        /// <param name="birthDate">Дата рождения</param>
+        /// <param name="weight">Вес</param>
+        /// <param name="height">Рост</param>
+        /// <exception cref="ArgumentNullException"></exception>
         public User(string name, Gender gender, DateTime birthDate, double weight, double height)
         {
+            #region Проверка условий
             if (string.IsNullOrEmpty(name)) 
             { 
                 throw new ArgumentNullException("name"); 
@@ -45,7 +72,7 @@ namespace CodeBlogFit.BL.Model
                 throw new ArgumentNullException("height");
 
             }
-
+            #endregion
 
             Name = name;
             Gender = gender;
