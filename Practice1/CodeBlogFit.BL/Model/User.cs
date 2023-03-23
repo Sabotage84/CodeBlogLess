@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace CodeBlogFit.BL.Model
 {
+    [Serializable]
     internal class User
     {
         #region Свойства
@@ -79,6 +80,11 @@ namespace CodeBlogFit.BL.Model
             BirthDate = birthDate;
             Weight = weight;
             Height = height;
+        }
+
+        public override string ToString()
+        {
+            return Name;
         }
     }
 }

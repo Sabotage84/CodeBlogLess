@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace CodeBlogFit.BL.Model
 {
+    [Serializable]
     /// <summary>
     /// Пол.
     /// </summary>
