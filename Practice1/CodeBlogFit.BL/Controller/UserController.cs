@@ -28,5 +28,24 @@ namespace CodeBlogFit.BL.Controller
             }
         }
 
+        public User Load()
+        {
+            var formatter = new BinaryFormatter();
+            
+            using(var fs = new FileStream("users.dat", FileMode.OpenOrCreate))
+            {
+                if(formatter.Deserialize(fs) is User user)
+                {
+                    return user;
+                }
+                else
+                {
+                    throw new FileLoadException();
+                }
+
+            }
+            
+        }
+
     }
 }
