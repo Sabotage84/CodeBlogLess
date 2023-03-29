@@ -12,8 +12,7 @@ namespace CodeBlogFit.CMD
         {
             Console.WriteLine("Вас приветствует программа Fitness!");
             Console.WriteLine("Введите имя:");
-            Console.WriteLine("TEST");
-
+            
             Console.ReadLine();
         }
     }
