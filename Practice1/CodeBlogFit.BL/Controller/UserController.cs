@@ -42,13 +42,17 @@ namespace CodeBlogFit.BL.Controller
         /// </summary>
         /// <returns>Пользователь приложения.</returns>
         /// <exception cref="FileLoadException"></exception>
-        public User Load()
+        public UserController()
         {
             var formatter = new BinaryFormatter();
             
             using(var fs = new FileStream("users.dat", FileMode.OpenOrCreate))
             {
-             return formatter.Deserialize(fs) as User;
+                if(formatter.Deserialize(fs) is User user)
+                {
+                    User = user;
+                }
+                
             }
 
 
