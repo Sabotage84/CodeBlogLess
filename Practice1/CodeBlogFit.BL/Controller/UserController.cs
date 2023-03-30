@@ -19,8 +19,12 @@ namespace CodeBlogFit.BL.Controller
         /// </summary>
         /// <param name="user">Пользователь приложения. </param>
         /// <exception cref="ArgumentNullException"></exception>
-        public UserController(User user) 
+        public UserController(string userName, string gender, DateTime birthDate, double weight, double height) 
         {
+            //TODO: Проверку вх параметров
+            var genderT = new Gender(gender);
+            var user = new User(userName, genderT, birthDate, weight, height);
+
             User = user ?? throw new ArgumentNullException("Пользователь не может быть равен NULL!", nameof(user));
         }
 
@@ -48,6 +52,8 @@ namespace CodeBlogFit.BL.Controller
             
             using(var fs = new FileStream("users.dat", FileMode.OpenOrCreate))
             {
+                
+
                 if(formatter.Deserialize(fs) is User user)
                 {
                     User = user;
