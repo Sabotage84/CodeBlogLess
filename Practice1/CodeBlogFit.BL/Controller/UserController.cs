@@ -25,7 +25,8 @@ namespace CodeBlogFit.BL.Controller
             var genderT = new Gender(gender);
             var user = new User(userName, genderT, birthDate, weight, height);
 
-            User = user ?? throw new ArgumentNullException("Пользователь не может быть равен NULL!", nameof(user));
+
+            User = user;
         }
 
         public User User { get; }
@@ -58,7 +59,7 @@ namespace CodeBlogFit.BL.Controller
                 {
                     User = user;
                 }
-                
+                //TODO: что делать если пользователя не прочитали
             }
 
 

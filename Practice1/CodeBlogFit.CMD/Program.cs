@@ -13,7 +13,15 @@ namespace CodeBlogFit.CMD
             Console.WriteLine("Вас приветствует программа Fitness!");
             Console.WriteLine("Введите имя:");
             
-            Console.ReadLine();
+            var name = Console.ReadLine();
+
+            Console.WriteLine("Введите пол:");
+            var gender = Console.ReadLine();
+
+            Console.WriteLine("Введите дату рождения:");
+            var birthDate = DateTime.Parse(Console.ReadLine());
+
+
         }
     }
 }
