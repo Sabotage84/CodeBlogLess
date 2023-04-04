@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace CodeBlogFit.BL.Model
 {
     [Serializable]
-    internal class User
+    public class User
     {
         #region Свойства
         /// <summary>

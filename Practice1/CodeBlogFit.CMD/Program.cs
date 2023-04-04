@@ -1,8 +1,10 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CodeBlogFit.BL.Controller;
 
 namespace CodeBlogFit.CMD
 {
@@ -21,6 +23,13 @@ namespace CodeBlogFit.CMD
             Console.WriteLine("Введите дату рождения:");
             var birthDate = DateTime.Parse(Console.ReadLine());
 
+            Console.WriteLine("Введите вес:");
+            var weight = double.Parse(Console.ReadLine());
+
+            Console.WriteLine("Введите рост:");
+            var height = double.Parse(Console.ReadLine());
+
+            var user = new UserController(name, gender, birthDate, weight, height);
 
         }
     }

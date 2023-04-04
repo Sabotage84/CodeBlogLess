@@ -10,7 +10,7 @@ namespace CodeBlogFit.BL.Model
     /// <summary>
     /// Пол.
     /// </summary>
-    internal class Gender
+    public class Gender
     {
         /// <summary>
         /// Название.

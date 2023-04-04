@@ -12,7 +12,7 @@ namespace CodeBlogFit.BL.Controller
     /// <summary>
     ////Контроллер пользователя
     /// </summary>
-    internal class UserController
+    public class UserController
     {
         /// <summary>
         ////Создание контроллера пользователя
