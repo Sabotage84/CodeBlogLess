@@ -61,11 +61,13 @@ namespace CodeBlogFit.BL.Controller
                 }
                 //TODO: что делать если пользователя не прочитали
             }
-
-
         }
             
-        
+        public void TestSow()
+        {
+            Console.WriteLine($"Имя: {User.Name}, пол: {User.Gender}, дата рождения: {User.BirthDate.ToShortDateString()}");
+            Console.WriteLine($"Рост: {User.Height} вес: {User.Weight} ");
+        }
 
     }
 }
