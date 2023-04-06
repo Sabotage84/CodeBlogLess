@@ -13,7 +13,11 @@ namespace CodeBlogFit.BL.Controller
     ////Контроллер пользователя
     /// </summary>
     public class UserController
-    {
+    {  
+        
+        public List<User> Users { get; }
+
+        public User CurrentUser { get; }
         /// <summary>
         ////Создание контроллера пользователя
         /// </summary>
@@ -26,9 +30,9 @@ namespace CodeBlogFit.BL.Controller
             var user = new User(userName, genderT, birthDate, weight, height);
 
 
-            User = user;
+       
         }
-, string gender, DateTime birthDate, double weight, double height
+
         public UserController(string userName)
         {
             if(string.IsNullOrEmpty(userName))
@@ -37,16 +41,20 @@ namespace CodeBlogFit.BL.Controller
             }
 
             Users = GetUsersData();
-            
-            
-            var genderT = new Gender(gender);
-            var user = new User(userName, genderT, birthDate, weight, height);
 
+            CurrentUser = Users.SingleOrDefault(u => u.Name == userName);
 
-            User = user;
+            if(CurrentUser == null)
+            {
+                CurrentUser= new User(userName);
+                Users.Add(CurrentUser);
+                Save();
+            }
+
+            
         }
 
-        public List<User> Users { get; }
+      
         /// <summary>
         /// Сохранить данные пользователя
         /// </summary>
@@ -86,8 +94,8 @@ namespace CodeBlogFit.BL.Controller
             
         public void TestSow()
         {
-            Console.WriteLine($"Имя: {User.Name}, пол: {User.Gender}, дата рождения: {User.BirthDate.ToShortDateString()}");
-            Console.WriteLine($"Рост: {User.Height} вес: {User.Weight} ");
+            Console.WriteLine($"Имя: {CurrentUser.Name}, пол: {CurrentUser.Gender}, дата рождения: {CurrentUser.BirthDate.ToShortDateString()}");
+            Console.WriteLine($"Рост: {CurrentUser.Height} вес: {CurrentUser.Weight} ");
         }
 
     }

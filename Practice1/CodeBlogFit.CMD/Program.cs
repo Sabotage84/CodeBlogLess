@@ -32,7 +32,7 @@ namespace CodeBlogFit.CMD
             //var userController = new UserController(name, gender, birthDate, weight, height);
             //userController.Save();
 
-            UserController testUserController = new UserController();
+            UserController testUserController = new UserController("Иван");
 
             testUserController.TestSow();
             Console.ReadLine(); 

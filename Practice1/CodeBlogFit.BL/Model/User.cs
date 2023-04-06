@@ -82,6 +82,14 @@ namespace CodeBlogFit.BL.Model
             Height = height;
         }
 
+        public User(string name)
+        {
+            if (string.IsNullOrEmpty(name))
+            {
+                throw new ArgumentNullException("name");
+            }
+        }
+
         public override string ToString()
         {
             return Name;
