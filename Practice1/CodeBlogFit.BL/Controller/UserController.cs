@@ -28,8 +28,25 @@ namespace CodeBlogFit.BL.Controller
 
             User = user;
         }
+, string gender, DateTime birthDate, double weight, double height
+        public UserController(string userName)
+        {
+            if(string.IsNullOrEmpty(userName))
+            {
+                throw new ArgumentException("Имя не может быть пустым!", nameof(userName));
+            }
 
-        public User User { get; }
+            Users = GetUsersData();
+            
+            
+            var genderT = new Gender(gender);
+            var user = new User(userName, genderT, birthDate, weight, height);
+
+
+            User = user;
+        }
+
+        public List<User> Users { get; }
         /// <summary>
         /// Сохранить данные пользователя
         /// </summary>
@@ -39,15 +56,15 @@ namespace CodeBlogFit.BL.Controller
 
             using (var fs = new FileStream("users.dat", FileMode.OpenOrCreate))
             {
-                formatter.Serialize(fs, User);
+                formatter.Serialize(fs, Users);
             }
         }
         /// <summary>
-        /// Загрузить данные пользователя
+        /// Получить список пользователя
         /// </summary>
         /// <returns>Пользователь приложения.</returns>
         /// <exception cref="FileLoadException"></exception>
-        public UserController()
+        private List<User> GetUsersData()
         {
             var formatter = new BinaryFormatter();
             
@@ -55,11 +72,15 @@ namespace CodeBlogFit.BL.Controller
             {
                 
 
-                if(formatter.Deserialize(fs) is User user)
+                if(formatter.Deserialize(fs) is List<User> users)
                 {
-                    User = user;
+                    return  users;
                 }
-                //TODO: что делать если пользователя не прочитали
+                else
+                {
+                    return new List<User>();
+                }
+                
             }
         }
             
