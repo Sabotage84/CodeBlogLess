@@ -35,6 +35,8 @@ namespace CodeBlogFit.BL.Model
         /// Рост
         /// </summary>
         public double Height { get; set; }
+
+        public int Age { get { return DateTime.Now.Year - BirthDate.Year; } }
         #endregion
 
         /// <summary>
@@ -88,11 +90,12 @@ namespace CodeBlogFit.BL.Model
             {
                 throw new ArgumentNullException("name");
             }
+            Name= name;
         }
 
         public override string ToString()
         {
-            return Name;
+            return Name + " " + Age;
         }
     }
 }

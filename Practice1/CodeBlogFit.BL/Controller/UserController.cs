@@ -18,6 +18,8 @@ namespace CodeBlogFit.BL.Controller
         public List<User> Users { get; }
 
         public User CurrentUser { get; }
+
+        public bool IsNewUser { get; } = false;
         /// <summary>
         ////Создание контроллера пользователя
         /// </summary>
@@ -47,7 +49,9 @@ namespace CodeBlogFit.BL.Controller
             if(CurrentUser == null)
             {
                 CurrentUser= new User(userName);
+               
                 Users.Add(CurrentUser);
+                IsNewUser = true;
                 Save();
             }
 
