@@ -30,8 +30,8 @@ namespace CodeBlogFit.BL.Controller
             //TODO: Проверку вх параметров
             var genderT = new Gender(gender);
             var user = new User(userName, genderT, birthDate, weight, height);
-
-
+            Users = new List<User>();
+            Users.Add(user);
        
         }
 
