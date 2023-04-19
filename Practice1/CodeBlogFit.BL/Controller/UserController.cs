@@ -96,6 +96,14 @@ namespace CodeBlogFit.BL.Controller
             }
         }
             
+        public void SetNewUserData(string genderName, DateTime birthDate, double weight=1, double height=1)
+        {
+            CurrentUser.Gender = new Gender(genderName);
+            CurrentUser.BirthDate = birthDate;
+            CurrentUser.Weight = weight;    
+            CurrentUser.Height = height;
+        }
+
         public void TestSow()
         {
             Console.WriteLine($"Имя: {CurrentUser.Name}, пол: {CurrentUser.Gender}, дата рождения: {CurrentUser.BirthDate.ToShortDateString()}");
