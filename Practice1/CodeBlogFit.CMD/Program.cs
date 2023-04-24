@@ -12,13 +12,43 @@ namespace CodeBlogFit.CMD
     {
         static void Main(string[] args)
         {
-            //Console.WriteLine("Вас приветствует программа Fitness!");
-            //Console.WriteLine("Введите имя:");
+            Console.WriteLine("Вас приветствует программа Fitness!");
+            Console.WriteLine("Введите имя:");
 
-            //var name = Console.ReadLine();
+            var name = Console.ReadLine();
 
-            //Console.WriteLine("Введите пол:");
-            //var gender = Console.ReadLine();
+            var userController = new UserController(name);
+
+            if (userController.IsNewUser) 
+            { 
+                Console.WriteLine("Введите пол:");
+                var gender = Console.ReadLine();
+
+                DateTime bithDate;
+
+               while(true)
+                {
+                    Console.Write("Введите дату рождения(dd.MM.yyyy): ");
+                    if (DateTime.TryParse(Console.ReadLine(), out bithDate))
+                    {
+                        break;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Не верный формат даты рождения!");
+                    }
+                }
+                    
+                 
+                
+
+
+
+
+                userController.SetNewUserData(gender,bithDate);
+            }
+
+           
 
             //Console.WriteLine("Введите дату рождения:");
             //var birthDate = DateTime.Parse(Console.ReadLine());
