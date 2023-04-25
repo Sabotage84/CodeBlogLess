@@ -19,14 +19,16 @@ namespace CodeBlogFit.CMD
 
             var userController = new UserController(name);
 
-            if (userController.IsNewUser) 
-            { 
+            if (userController.IsNewUser)
+            {
                 Console.WriteLine("Введите пол:");
                 var gender = Console.ReadLine();
 
                 DateTime bithDate;
+                double weight=ParseDouble("вес");
+                double height=ParseDouble("рост");
 
-               while(true)
+                while (true)
                 {
                     Console.Write("Введите дату рождения(dd.MM.yyyy): ");
                     if (DateTime.TryParse(Console.ReadLine(), out bithDate))
@@ -38,17 +40,17 @@ namespace CodeBlogFit.CMD
                         Console.WriteLine("Не верный формат даты рождения!");
                     }
                 }
-                    
-                 
-                
 
 
 
 
-                userController.SetNewUserData(gender,bithDate);
+
+
+
+                userController.SetNewUserData(gender, bithDate);
             }
 
-           
+
 
             //Console.WriteLine("Введите дату рождения:");
             //var birthDate = DateTime.Parse(Console.ReadLine());
@@ -65,7 +67,25 @@ namespace CodeBlogFit.CMD
             UserController testUserController = new UserController("Иван");
 
             testUserController.TestSow();
-            Console.ReadLine(); 
+            Console.ReadLine();
+        }
+
+        private static double ParseDouble(string name)
+        {
+            while (true)
+            {
+
+
+                Console.Write($"Введите {name}: ");
+                if (double.TryParse(Console.ReadLine(), out double value))
+                {
+                    return value;
+                }
+                else
+                {
+                    Console.WriteLine($"Не верный формат {name}!");
+                }
+            }
         }
     }
 }
