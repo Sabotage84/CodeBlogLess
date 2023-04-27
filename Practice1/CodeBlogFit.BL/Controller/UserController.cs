@@ -110,5 +110,14 @@ namespace CodeBlogFit.BL.Controller
             Console.WriteLine($"Рост: {CurrentUser.Height} вес: {CurrentUser.Weight} ");
         }
 
+        public void TestShowAll()
+        {
+            foreach (var item in Users)
+            {
+                Console.WriteLine($"Имя: {item.Name}, пол: {item.Gender}, дата рождения: {item.BirthDate.ToShortDateString()}");
+                Console.WriteLine($"Рост: {item.Height} вес: {item.Weight} ");
+            }
+          
+        }
     }
 }

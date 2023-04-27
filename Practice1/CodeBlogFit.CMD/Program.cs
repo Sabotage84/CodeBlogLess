@@ -43,7 +43,7 @@ namespace CodeBlogFit.CMD
 
 
                 userController.SetNewUserData(gender, bithDate, weight, height);
-                userController.TestSow();
+               
             }
 
 
@@ -62,7 +62,7 @@ namespace CodeBlogFit.CMD
 
             UserController testUserController = new UserController("Иван");
 
-            testUserController.TestSow();
+            testUserController.TestShowAll();
             Console.ReadLine();
         }
 
