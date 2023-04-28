@@ -43,7 +43,7 @@ namespace CodeBlogFit.CMD
 
 
                 userController.SetNewUserData(gender, bithDate, weight, height);
-               
+                userController.Save();
             }
 
 
