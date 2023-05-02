@@ -14,7 +14,9 @@ namespace CodeBlogFit.BL.Controller.Tests
         [TestMethod()]
         public void UserControllerTest()
         {
-            Assert.Fail();
+            UserController uc = new UserController("LADA");
+            Assert.IsNotNull(uc);
+
         }
 
         [TestMethod()]
