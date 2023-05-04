@@ -40,7 +40,9 @@ namespace CodeBlogFit.BL.Controller.Tests
         [TestMethod()]
         public void TestSowTest()
         {
-            Assert.Fail();
+            UserController uc = new UserController("Ivan");
+            uc.TestSow();
+            Assert.IsNotNull(uc);
         }
 
         [TestMethod()]
