@@ -42,7 +42,8 @@ namespace CodeBlogFit.BL.Controller.Tests
         [TestMethod()]
         public void SetNewUserDataTest()
         {
-            Assert.Fail();
+            UserController uc = new UserController("NewUser");
+            Assert.IsNotNull(uc);
         }
 
         [TestMethod()]
