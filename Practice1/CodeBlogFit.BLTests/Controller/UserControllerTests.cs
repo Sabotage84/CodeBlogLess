@@ -28,7 +28,15 @@ namespace CodeBlogFit.BL.Controller.Tests
         [TestMethod()]
         public void SaveTest()
         {
-            Assert.Fail();
+            // Arrange
+            var userName = Guid.NewGuid().ToString();
+
+            // Act
+            var controller = new UserController(userName);
+
+            // Assert 
+            Assert.AreEqual(userName, controller.CurrentUser.Name);
+          
         }
 
         [TestMethod()]
