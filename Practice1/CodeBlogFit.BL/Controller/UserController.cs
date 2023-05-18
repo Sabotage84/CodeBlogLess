@@ -102,6 +102,7 @@ namespace CodeBlogFit.BL.Controller
             CurrentUser.BirthDate = birthDate;
             CurrentUser.Weight = weight;    
             CurrentUser.Height = height;
+            Save();
         }
 
         public void TestSow()
