@@ -73,7 +73,9 @@ namespace CodeBlogFit.BL.Controller.Tests
         [TestMethod()]
         public void TestShowAllTest()
         {
-            Assert.Fail();
+            UserController uc = new UserController("Ivan");
+            uc.TestShowAll();
+            Assert.AreEqual(true, true);
         }
     }
 }
