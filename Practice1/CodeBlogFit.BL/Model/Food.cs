@@ -8,5 +8,8 @@ namespace CodeBlogFit.BL.Model
 {
     public class Food
     {
+        public string Name { get; }
+
+        public double Protein { get; }
     }
 }
