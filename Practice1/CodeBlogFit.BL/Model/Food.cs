@@ -11,5 +11,11 @@ namespace CodeBlogFit.BL.Model
         public string Name { get; }
 
         public double Protein { get; }
+
+        public double Fats { get;}
+
+        public double Carbohydrates { get; }
+
+        public double Calories { get; }
     }
 }
