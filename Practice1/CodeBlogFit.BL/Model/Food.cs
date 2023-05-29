@@ -17,5 +17,7 @@ namespace CodeBlogFit.BL.Model
         public double Carbohydrates { get; }
 
         public double Calories { get; }
+
+        private double CaloriesOneGramm { get { return (Calories / 100.00); } }
     }
 }
