@@ -21,6 +21,7 @@ namespace CodeBlogFit.BL.Model
         private double CaloriesOneGramm { get { return (Calories / 100.00); } }
         private double ProteinsOneGramm { get { return (Protein / 100.00); } }
         private double FatssOneGramm { get { return (Fats / 100.00); } }
+        private double CarbohydratesOneGramm { get { return (Carbohydrates / 100.00); } }
 
 
     }
